@@ -12,12 +12,14 @@ Single node jobs
 In order to run an instance of a container, running the command defined in the image’s entrypoint, all you need to do is to specify the Docker Hub image name:
 
 .. code-block:: console
+
    $ prominence create eoscprominence/testpi
    Job created with id 3101
 
 When a job has been successfully submitted an (integer) ID will be returned. Alternatively, a command (and arguments) can be specified. For example:
 
 .. code-block:: console
+
    $ prominence create centos:7 "/bin/sleep 100"
 
 The command of course should exist within the container. If arguments need to be specified you should put the command and any arguments inside a single set of double quotes, as in the example above.
@@ -25,6 +27,7 @@ The command of course should exist within the container. If arguments need to be
 To run multiple commands inside the same container, use ``/bin/bash -c`` with the commands enclosed in quotes and seperated by semicolons, for example:
 
 .. code-block:: console
+
    $ prominence create centos:7 "/bin/bash -c \"date; sleep 10; date\""
 
 This is of course assuming ``/bin/bash`` exists inside the container image.
@@ -35,6 +38,7 @@ MPI jobs
 To run an MPI job, you need to specify either ``--openmpi`` for Open MPI, ``--intelmpi`` for Intel MPI and ``--mpich`` for MPICH. For multi-node jobs the number of nodes required should also be specified. For example:
 
 .. code-block:: console
+
    $ prominence create --openmpi --nodes 4 alahiff/openmpi-hello-world:latest /mpi_hello_world
 
 The number of processes to run per node is assumed to be the same as the number of cores available per node. If the number of cores available per node is more than the requested number of cores all cores will be used. This behaviour can be changed by using ``--procs-per-node`` to define the number of processes per node to use.
@@ -52,6 +56,7 @@ In this situation the number of MPI processes to run per node must be specified 
 In the following example we have 2 nodes with 4 CPUs each, and we run 2 MPI processes on each node, where each MPI process runs 2 OpenMP threads:
 
 .. code-block:: console
+
    $ prominence create --cpus 4 \
                        --memory 4 \
                        --nodes 2 \
@@ -80,6 +85,7 @@ CPU cores and memory can be specified using the ``--cpus`` and ``--memory`` opti
 Here is an example running an MPI job on 4 nodes where each node has 2 CPUs and 8 GB memory, there is a shared 20 GB disk accessible by all 4 nodes, and the maximum runtime is 1000 minutes:
 
 .. code-block:: console
+
    $ prominence create --openmpi --nodes 4 --cpus 2 --memory 8 --disk 20 --runtime 1000 alahiff/geant4mpi:1.3a3
 
 By default a 10 GB disk is available to jobs, which is located on separate block storage. For MPI jobs the disk is available across all nodes running the job. The default maximum runtime is 720 minutes.
@@ -100,6 +106,7 @@ Environment variables
 It is a common technique to use environment variables to pass information, such as configuration options, into a container. The option ``--env`` can be used to specify an environment variable in the form of a key-value pair separated by “=”. This option can be specified multiple times to set multiple environment variables. For example:
 
 .. code-block:: console
+
    $ prominence create --env LOWER=4.5 --env UPPER=6.7 test/container
 
 Multiple tasks in a single job
@@ -113,6 +120,7 @@ Standard output and error
 The standard output and error from a job can be seen using the stdout and stderr commands. For example, to get the standard output for the job with id 299:
 
 .. code-block:: console
+
    $ prominence stdout 299
     _______
    < hello >
