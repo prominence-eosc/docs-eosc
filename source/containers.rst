@@ -28,7 +28,7 @@ Images which will result in Singularity being selected:
 
 * Singularity Hub image (begins with "shub://")
 
-* URL for a Singularity image (filename ends in ".sif")
+* URL for a Singularity image (filename ends in ".sif" or ".simg")
 
 Images which will result in udocker being selected:
 
