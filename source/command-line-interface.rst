@@ -150,13 +150,13 @@ Describing a workflow:
 
 .. code-block:: console
 
-   $ prominence describe workflow ...
+   $ prominence describe workflow <workflow id>
 
 Deleting a workflow:
 
 .. code-block:: console
 
-   $ prominence delete workflow ...
+   $ prominence delete workflow <workflow id>
 
 The standard output and error from a job which is part of a workflow can be viewed by specifying both the workflow id and the name of the job, i.e.
 
