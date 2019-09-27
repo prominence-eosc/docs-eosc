@@ -15,5 +15,6 @@ PROMINENCE is a platform which allows users to exploit idle cloud resources for 
 
    introduction
    containers
+   command-line-interface
    jobs
    workflows
