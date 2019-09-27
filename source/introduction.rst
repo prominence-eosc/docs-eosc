@@ -3,9 +3,6 @@
 Introduction
 ============
 
-Getting access
---------------
-
 Workflows, jobs and tasks
 -------------------------
 

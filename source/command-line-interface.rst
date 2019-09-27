@@ -169,7 +169,7 @@ The standard output and error from a job which is part of a workflow can be view
 Getting an access token
 -----------------------
 
-In order to interact with the PROMINENCE service an access token is required. Go to the `EGI FedCloud Check-in client <EGI https://aai.egi.eu/fedcloud>`_ and click on ‘Authorise’ to log in with your Check-in credentials to obtain:
+In order to interact with the PROMINENCE service an access token is required. Go to the `EGI FedCloud Check-in client <https://aai.egi.eu/fedcloud>`_ and click on ‘Authorise’ to log in with your Check-in credentials to obtain:
 
 * a client id
 * a client secret
