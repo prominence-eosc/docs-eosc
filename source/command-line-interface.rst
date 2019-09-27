@@ -166,3 +166,13 @@ The standard output and error from a job which is part of a workflow can be view
 
    $ prominence stdout <id> <job name>
 
+Getting an access token
+-----------------------
+
+In order to interact with the PROMINENCE service an access token is required. Go to the `EGI FedCloud Check-in client <EGI https://aai.egi.eu/fedcloud>`_ and click on ‘Authorise’ to log in with your Check-in credentials to obtain:
+
+* a client id
+* a client secret
+* a refresh token
+
+The refresh token allows you to generate access tokens without having to login every time. 
