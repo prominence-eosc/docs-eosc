@@ -13,3 +13,4 @@ PROMINENCE is a platform which allows users to exploit idle cloud resources for 
    :caption: Contents:
 
    introduction
+   containers
