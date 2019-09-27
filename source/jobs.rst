@@ -73,11 +73,8 @@ Resources
 By default a job will be run with 1 CPU and 1 GB memory but this can easily be changed. The following resources can be specified:
 
 * CPU cores
-
 * Memory (in GB)
-
 * Disk (in GB)
-
 * Maximum runtime (in mins)
 
 CPU cores and memory can be specified using the ``--cpus`` and ``--memory`` options. A disk size can also be specified using ``--disk``.
