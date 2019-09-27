@@ -12,3 +12,4 @@ PROMINENCE is a platform which allows users to exploit idle cloud resources for 
    :maxdepth: 2
    :caption: Contents:
 
+   introduction
