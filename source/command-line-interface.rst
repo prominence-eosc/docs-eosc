@@ -135,3 +135,32 @@ The main help page gives a list of all the available commands:
      -h, --help            show this help message and exit
      --version             show the version number and exit
 
+Jobs and workflows
+------------------
+
+By default all PROMINENCE CLI commands refer to jobs. However, a number of commands include the ability to specify a resource, which is either a job or a workflow.
+
+Listing workflows:
+
+.. code-block:: console
+
+   $ prominence list workflows
+
+Describing a workflow:
+
+.. code-block:: console
+
+   $ prominence describe workflow ...
+
+Deleting a workflow:
+
+.. code-block:: console
+
+   $ prominence delete workflow ...
+
+The standard output and error from a job which is part of a workflow can be viewed by specifying both the workflow id and the name of the job, i.e.
+
+.. code-block:: console
+
+   $ prominence stdout <id> <job name>
+
