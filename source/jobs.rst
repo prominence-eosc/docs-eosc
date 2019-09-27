@@ -86,7 +86,13 @@ Here is an example running an MPI job on 4 nodes where each node has 2 CPUs and 
 
 .. code-block:: console
 
-   $ prominence create --openmpi --nodes 4 --cpus 2 --memory 8 --disk 20 --runtime 1000 alahiff/geant4mpi:1.3a3
+   $ prominence create --openmpi \
+                       --nodes 4 \
+                       --cpus 2 \
+                       --memory 8 \
+                       --disk 20 \
+                       --runtime 1000 \
+                       alahiff/geant4mpi:1.3a3
 
 By default a 10 GB disk is available to jobs, which is located on separate block storage. For MPI jobs the disk is available across all nodes running the job. The default maximum runtime is 720 minutes.
 
@@ -95,7 +101,11 @@ Working directory
 
 By default the current working directory is scratch space made available inside the container. The path to this directory is also specified by the environment variables HOME, TEMP and TMP.
 
-To specify a different working directory use ``--workdir``.
+To specify a different working directory use ``--workdir``. For example, the following will run ``pwd`` inside the "/tmp" directory.
+
+.. code-block:: console
+
+   $ prominence create --workdir /tmp centos:7 pwd
 
 .. note::
    Remember that you should not try to write inside the container’s filesystem as this may be prevented by the container runtime or result in permission problems.
