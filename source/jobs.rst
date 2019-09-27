@@ -146,7 +146,7 @@ The standard output and error from a job can be seen using the stdout and stderr
 
 
 .. note::
-   The standard output and error can be seen while jobs are running as well as once they have completed, allowing users to check the status of long-running jobs. This is not quite realtime, so there can be short delays in the standard output and error being updated.
+   The standard output and error can be seen while jobs are running as well as once they have completed, allowing users to check the status of long-running jobs.
 
 Checking job status
 -------------------
