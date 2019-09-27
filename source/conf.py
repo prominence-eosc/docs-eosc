@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'prominence'
+project = 'PROMINENCE'
 copyright = '2019, Andrew Lahiff'
 author = 'Andrew Lahiff'
 
