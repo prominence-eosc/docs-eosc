@@ -34,14 +34,6 @@ The directory ``.local/bin`` will need to be added to the ``PATH``.
 As a normal user using virtualenv
 :::::::::::::::::::::::::::::::::
 
-If ``virtualenv`` is not available it can be installed in a user’s home directory by typing:
-
-.. code-block:: console
-
-   $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-   $ python3 get-pip.py --user
-   $ pip install --user virtualenv
-
 The PROMINENCE CLI can be installed in a new virtual environment, e.g.
 
 .. code-block:: console
@@ -49,6 +41,14 @@ The PROMINENCE CLI can be installed in a new virtual environment, e.g.
    $ virtualenv ~/.virtualenvs/prominence
    $ source ~/.virtualenvs/prominence/bin/activate
    $ pip install prominence
+
+If ``virtualenv`` is not available it can be installed in a user’s home directory by typing the following before running the above:
+
+.. code-block:: console
+
+   $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+   $ python3 get-pip.py --user
+   $ pip install --user virtualenv
 
 Using Singularity
 ^^^^^^^^^^^^^^^^^
