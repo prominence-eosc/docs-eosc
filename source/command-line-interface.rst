@@ -80,7 +80,7 @@ Firstly install udocker if necessary:
    $ chmod u+rx ./udocker
    $ ./udocker install
 
-and move the file udocker to somewhere in your PATH. See `here <https://github.com/indigo-dc/udocker/blob/master/doc/installation_manual.md>`_ for more information.
+and move the file ``udocker`` to somewhere in your ``PATH``. See `here <https://github.com/indigo-dc/udocker/blob/master/doc/installation_manual.md>`_ for more information.
 
 Once udocker is installed, pull the image and create a container:
 
