@@ -59,7 +59,7 @@ An alternative is to use Singularity, if available, and create an alias for the 
 
    $ singularity pull docker://eoscprominence/cli
 
-This will create a file ``cli_latest.sif``. An alias can be created by putting the following in your ``~/.bashrc``:
+This will create a file ``cli_latest.sif``. An alias can be created by putting the following in your ``~/.bashrc`` file:
 
 .. code-block:: console
 
@@ -89,7 +89,7 @@ Once udocker is installed, pull the image and create a container:
    $ udocker pull eoscprominence/cli
    $ udocker create --name=prominence eoscprominence/cli:latest
 
-An alias for the prominence command can be created by putting the following in your ``~/.bashrc``:
+An alias for the prominence command can be created by putting the following in your ``~/.bashrc`` file:
 
 .. code-block:: console
 
@@ -103,6 +103,15 @@ The version of the PROMINENCE CLI installed can be checked by running:
 .. code-block:: console
 
    $ prominence --version
+
+Setup
+-----
+
+The URL of the PROMINENCE server needs to be defined in an environment variable. Add the following line to your ``~/.bashrc`` file:
+
+.. code-block:: console
+
+    export PROMINENCE_URL=https://prominence.fedcloud-tf.fedcloud.eu/v1
 
 Help
 ----
