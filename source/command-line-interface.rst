@@ -16,7 +16,7 @@ With sudo or root access
 
 The PROMINENCE CLI can be installed on a host by typing the following:
 
-.. code-block:: bash
+.. code-block:: console
 
    $ sudo pip install prominence
 
@@ -25,7 +25,7 @@ As a normal user without using virtualenv
 
 The PROMINENCE CLI can be installed in a user’s home directory by running:
 
-.. code-block:: bash
+.. code-block:: console
 
    $ pip install --user prominence
 
@@ -36,7 +36,7 @@ As a normal user using virtualenv
 
 The PROMINENCE CLI can be installed in a new virtual environment, e.g.
 
-.. code-block:: bash
+.. code-block:: console
 
    $ virtualenv ~/.virtualenvs/prominence
    $ source ~/.virtualenvs/prominence/bin/activate
@@ -44,7 +44,7 @@ The PROMINENCE CLI can be installed in a new virtual environment, e.g.
 
 If ``virtualenv`` is not available it can be installed in a user’s home directory by typing the following before running the above:
 
-.. code-block:: bash
+.. code-block:: console
 
    $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
    $ python3 get-pip.py --user
