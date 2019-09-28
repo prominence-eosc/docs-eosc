@@ -66,3 +66,5 @@ and for MPICH:
 
    ENV PATH            /usr/lib64/mpich/bin:${PATH}
    ENV LD_LIBRARY_PATH /usr/lib64/mpich/lib:${LD_LIBRARY_PATH}
+
+To create a container using IntelMPI an Intel compiler licence is required to build the application. This application can then be copied into a container image with the Intel Parallel Studio Runtime installed. See `here <https://software.intel.com/en-us/articles/installing-intel-parallel-studio-xe-runtime-2019-using-yum-repository>`_ for information on installing the free Intel runtime.
