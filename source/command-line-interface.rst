@@ -185,3 +185,6 @@ In order to interact with the PROMINENCE service an access token is required. Go
 * a refresh token
 
 The refresh token allows you to generate access tokens without having to login every time. 
+
+.. note::
+   Since PROMINENCE uses a REST API every request needs to be authenticated and hence requires an access token. The access token is not stored in any way by the server.
