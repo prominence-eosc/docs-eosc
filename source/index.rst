@@ -8,6 +8,8 @@ PROMINENCE
 
 PROMINENCE is a platform which allows users to exploit idle cloud resources for running containerized workloads.
 
+Submit globally, run globally.
+
 .. toctree::
    :numbered:
    :maxdepth: 2
