@@ -190,7 +190,9 @@ In order to interact with the PROMINENCE service an access token is required. Go
 * a client secret
 * a refresh token
 
-The refresh token allows you to generate access tokens without having to login every time. The FedCloud Check-in client also provides the exact command to run to generate an access token. The PROMINENCE CLI requires the output of this command to be stored in the file ``~/.prominence/token``. The command to run will be of the form:
+The refresh token allows you to generate access tokens without having to login every time.
+
+The FedCloud Check-in client also provides the exact command to run to generate an access token. The PROMINENCE CLI requires the output of this command to be stored in the file ``~/.prominence/token``. The command to run will be of the form:
 
 .. code-block:: console
 
