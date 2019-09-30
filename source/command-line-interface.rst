@@ -113,6 +113,12 @@ The URL of the PROMINENCE server needs to be defined in an environment variable.
 
     export PROMINENCE_URL=https://prominence.fedcloud-tf.fedcloud.eu/v1
 
+Create a configuration directory for PROMINENCE:
+
+.. code-block:: console
+
+   $ mkdir ~/.prominence
+
 Help
 ----
 
@@ -184,7 +190,11 @@ In order to interact with the PROMINENCE service an access token is required. Go
 * a client secret
 * a refresh token
 
-The refresh token allows you to generate access tokens without having to login every time. 
+The refresh token allows you to generate access tokens without having to login every time. The FedCloud Check-in client also provides the exact command to run to generate an access token. The PROMINENCE CLI requires the output of this command to be stored in the file ``~/.prominence/token``. The command to run will be of the form:
+
+.. code-block:: console
+
+   $ curl -X POST -u '<client id>':'<client secret>' -d 'client_id=<client id>&client_secret=<client secrer>&grant_type=refresh_token&refresh_token=<refresh token>&scope=openid%20email%20profile' 'https://aai.egi.eu/oidc/token' > ~/.prominence/token
 
 .. note::
    Since PROMINENCE uses a REST API every request needs to be authenticated and hence requires an access token. The access token is not stored in any way by the server.
