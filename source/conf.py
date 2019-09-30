@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'PROMINENCE User Manual'
+project = 'PROMINENCE User Documentation'
 copyright = '2019, Andrew Lahiff'
 author = 'Andrew Lahiff'
 
