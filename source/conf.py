@@ -53,4 +53,4 @@ html_static_path = ['_static']
 
 master_doc = 'index'
 
-html_theme_options = {'body_max_width': '70%'}
+html_style = 'css/prominence.css' 
