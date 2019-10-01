@@ -111,7 +111,7 @@ The URL of the PROMINENCE server needs to be defined in an environment variable.
 
 .. code-block:: console
 
-    export PROMINENCE_URL=https://prominence.fedcloud-tf.fedcloud.eu/v1
+    export PROMINENCE_URL=https://prominence.fedcloud-tf.fedcloud.eu/api/v1
 
 Create a configuration directory for PROMINENCE:
 
