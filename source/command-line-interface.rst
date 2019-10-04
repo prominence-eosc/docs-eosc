@@ -107,12 +107,6 @@ The version of the PROMINENCE CLI installed can be checked by running:
 Setup
 -----
 
-The URL of the PROMINENCE server needs to be defined in an environment variable. Add the following line to your ``~/.bashrc`` file:
-
-.. code-block:: console
-
-    export PROMINENCE_URL=https://prominence.fedcloud-tf.fedcloud.eu/api/v1
-
 Create a configuration directory for PROMINENCE:
 
 .. code-block:: console
