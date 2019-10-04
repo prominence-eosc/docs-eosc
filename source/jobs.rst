@@ -180,28 +180,25 @@ To get more information about an individual job, use the describe command, for e
 .. code-block:: console
 
    $ prominence describe 345
-   [
-     {
-       "id": 345,
-       "status": "created",
-       "resources": {
-         "cpus": 1,
-         "disk": 10,
-         "memory": 1,
-         "nodes": 1,
-         "walltime": 720
-       },
-       "tasks": [
-         {
-           "image": "alahiff/testpi",
-           "runtime": "singularity"
-         }
-       ],
-       "events": {
-         "createTime": "2019-06-18T10:16:36"
+   {
+     "id": , 
+     "status": "idle", 
+     "resources": {
+       "nodes": 1, 
+       "disk": 10, 
+       "cpus": 1, 
+       "memory": 1
+     }, 
+     "tasks": [
+       {
+         "image": "eoscprominence/testpi", 
+         "runtime": "singularity"
        }
+     ], 
+     "events": {
+       "createTime": "2019-10-04 18:07:40"
      }
-   ]
+   }
 
 To show information about completed jobs, both the list and describe commands accept a ``--completed`` option. For example, to list the last 2 completed jobs:
 
