@@ -57,13 +57,13 @@ An alternative is to use Singularity, if available, and create an alias for the 
 
 .. code-block:: console
 
-   $ singularity pull docker://eoscprominence/cli
+   $ singularity pull docker://eoscprominence/prominence-cli
 
-This will create a file ``cli_latest.sif``. An alias can be created by putting the following in your ``~/.bashrc`` file:
+This will create a file ``prominence-cli.simg``. An alias can be created by putting the following in your ``~/.bashrc`` file:
 
 .. code-block:: console
 
-   alias prominence="singularity run <path>/cli_latest.sif"
+   alias prominence="singularity run <path>/prominence-cli.simg.sif"
 
 where the full path to the container image should be specified.
 
@@ -86,8 +86,8 @@ Once udocker is installed, pull the image and create a container:
 
 .. code-block:: console
 
-   $ udocker pull eoscprominence/cli
-   $ udocker create --name=prominence eoscprominence/cli:latest
+   $ udocker pull eoscprominence/prominence-cli
+   $ udocker create --name=prominence eoscprominence/prominence-cli:latest
 
 An alias for the prominence command can be created by putting the following in your ``~/.bashrc`` file:
 
