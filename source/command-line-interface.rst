@@ -181,7 +181,7 @@ To check the status of the job, run ``prominence list`` to list all currently ac
    ID     NAME   CREATED               STATUS      ELAPSED      IMAGE            CMD
    7375          2019-10-14 12:33:11   deploying                alahiff/testpi
 
-Eventually the status will change to 'runnning', 'completed' and then disappear. The ``list`` command can be given the argument ``--completed`` to show completed jobs. For example, to see the most recently completed job:
+Eventually the status will change to ``runnning``, ``completed`` and then disappear. The ``list`` command can be given the argument ``--completed`` to show completed jobs. For example, to see the most recently completed job:
 
 .. code-block:: console
 
