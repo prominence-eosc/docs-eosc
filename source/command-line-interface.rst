@@ -164,11 +164,56 @@ The FedCloud Check-in client also provides the exact command to run to generate 
 Your first job
 --------------
 
-Run the following command in order to submit a simple test job:
+Run the following command in order to submit a simple test job by typing ``prominence create alahiff/testpi``, i.e.
 
 .. code-block:: console
 
-   $ prominence create eoscprominence/testpi
+   $ prominence create alahiff/testpi
+   Job created with id 7375
 
-To check the status of the job run ``prominence list``, e.g.
+Here ``alahiff/testpi`` is the name of the container image on Docker Hub.
+
+To check the status of the job, run ``prominence list`` to list all currently active jobs:
+
+.. code-block:: console
+
+   $ prominence list
+   ID     NAME   CREATED               STATUS      ELAPSED      IMAGE            CMD
+   7375          2019-10-14 12:33:11   deploying                alahiff/testpi
+
+Eventually the status will change to 'runnning', 'completed' and then disappear. The ``list`` command can be given the argument ``--completed`` to show completed jobs. For example, to see the most recently completed job:
+
+.. code-block:: console
+
+    $ prominence list --completed
+    ID     NAME   CREATED               STATUS      ELAPSED      IMAGE            CMD
+    7375          2019-10-14 12:33:11   completed   0+00:00:15   alahiff/testpi
+
+Once the test job has finished running, ``prominence stdout`` can be used to view the standard output, e.g.
+
+.. code-block:: console
+
+   $ prominence stdout 7375
+                            Plouff                  Bellard                         Chudnovsky
+   Iteration number  1   3.133333333333333333333333   3.141765873015873015873017   3.141592653589734207668453
+   Iteration number  2   3.141422466422466422466422   3.141592571868390306374053   3.141592653589793238462642
+   Iteration number  3   3.141587390346581523052111   3.141592653642050769944284   3.141592653589793238462642
+   Iteration number  4   3.141592457567435381837004   3.141592653589755368080514   3.141592653589793238462642
+   Iteration number  5   3.141592645460336319557021   3.141592653589793267843377   3.141592653589793238462642
+   Iteration number  6   3.141592653228087534734378   3.141592653589793238438852   3.141592653589793238462642
+   Iteration number  7   3.141592653572880827785241   3.141592653589793238462664   3.141592653589793238462642
+   Iteration number  8   3.141592653588972704940778   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  9   3.141592653589752275236178   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  10   3.141592653589791146388777   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  11   3.141592653589793129614171   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  12   3.141592653589793232711293   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  13   3.141592653589793238154767   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  14   3.141592653589793238445978   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  15   3.141592653589793238461733   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  16   3.141592653589793238462594   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  17   3.141592653589793238462641   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  18   3.141592653589793238462644   3.141592653589793238462644   3.141592653589793238462642
+   Iteration number  19   3.141592653589793238462644   3.141592653589793238462644   3.141592653589793238462642
+
+The next sections of the documentation describe in more detail how to run more complex jobs and workflows.
 
