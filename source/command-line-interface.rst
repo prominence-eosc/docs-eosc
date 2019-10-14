@@ -141,6 +141,13 @@ The main help page gives a list of all the available commands:
      -h, --help            show this help message and exit
      --version             show the version number and exit
 
+Registration
+------------
+
+PROMINENCE will automatically deploy and delete infrastructure provision on EGI FedCloud sites. In order to give permission for PROMINENCE to do this, visit `https://prominence.fedcloud-tf.fedcloud.eu/ <https://prominence.fedcloud-tf.fedcloud.eu/>`_ and click **Authorise**. Doing this provides a long-lived refresh token to PROMINENCE which it can use to obtain access tokens which it uses to interact with clouds.
+
+Note that you can at any time go to `https://aai.egi.eu/oidc/manage/user/services <https://aai.egi.eu/oidc/manage/user/services>`_ and revoke access. Please be aware that if you do this PROMINENCE will no longer be able to delete infrastructure associated with your jobs, so if there are any running VMs they will continue running indefinitely.
+
 Getting an access token
 -----------------------
 
