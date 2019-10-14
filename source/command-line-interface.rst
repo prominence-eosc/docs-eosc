@@ -171,7 +171,7 @@ Run the following command in order to submit a simple test job by typing ``promi
    $ prominence create alahiff/testpi
    Job created with id 7375
 
-Here ``alahiff/testpi`` is the name of the container image on Docker Hub.
+Here ``alahiff/testpi`` is the name of the container image on Docker Hub. This command will submit a job which runs a container from the ``alahiff/testpi`` image using the default entrypoint specified in the image. In this case it is a simple Python script which calculates pi in three different ways.
 
 To check the status of the job, run ``prominence list`` to list all currently active jobs:
 
