@@ -141,39 +141,10 @@ The main help page gives a list of all the available commands:
      -h, --help            show this help message and exit
      --version             show the version number and exit
 
-Jobs and workflows
-------------------
-
-By default all PROMINENCE CLI commands refer to jobs. However, a number of commands include the ability to specify a resource, which is either a job or a workflow.
-
-Listing workflows:
-
-.. code-block:: console
-
-   $ prominence list workflows
-
-Describing a workflow:
-
-.. code-block:: console
-
-   $ prominence describe workflow <workflow id>
-
-Deleting a workflow:
-
-.. code-block:: console
-
-   $ prominence delete workflow <workflow id>
-
-The standard output and error from a job which is part of a workflow can be viewed by specifying both the workflow id and the name of the job, i.e.
-
-.. code-block:: console
-
-   $ prominence stdout <id> <job name>
-
 Getting an access token
 -----------------------
 
-In order to interact with the PROMINENCE service an access token is required. Go to the `EGI FedCloud Check-in client <https://aai.egi.eu/fedcloud>`_ and click on **Authorise** to log in with your Check-in credentials to obtain:
+In order to interact with the PROMINENCE service via the CLI an access token is required. Go to the `EGI FedCloud Check-in client <https://aai.egi.eu/fedcloud>`_ and click on **Authorise** to log in with your Check-in credentials to obtain:
 
 * a client id
 * a client secret
@@ -189,3 +160,15 @@ The FedCloud Check-in client also provides the exact command to run to generate 
 
 .. note::
    Since PROMINENCE uses a REST API every request needs to be authenticated and hence requires an access token. The access token is not stored in any way by the server.
+
+Your first job
+--------------
+
+Run the following command in order to submit a simple test job:
+
+.. code-block:: console
+
+   $ prominence create eoscprominence/testpi
+
+To check the status of the job run ``prominence list``, e.g.
+
