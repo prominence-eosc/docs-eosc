@@ -20,3 +20,4 @@ Submit globally, run globally.
    command-line-interface
    jobs
    workflows
+   data
