@@ -275,3 +275,40 @@ To list all jobs, i.e. both active and completed jobs, with a specific label, ad
 
    $ prominence list --constraint experiment=MAST-U --all
 
+
+Generating JSON
+---------------
+
+When prominence create is run with the ``--dry-run`` option, the job will not be submitted but the JSON description of the job will be printed to standard output. For example:
+
+.. code-block:: console
+   
+   $ prominence create --dry-run --name test1 --cpus 4 --memory 8 --disk 20 busybox
+   {
+     "resources": {
+       "memory": 8,
+       "cpus": 4,
+       "nodes": 1,
+       "disk": 20
+     },
+     "name": "test1",
+     "tasks": [
+       {
+         "image": "busybox",
+         "runtime": "singularity"
+       }
+     ]
+   }
+
+If the JSON output is saved in a file it be submitted to PROMINENCE using the ``run`` command, e.g.:
+
+.. code-block:: console
+
+   $ prominence run <filename.json>
+
+The job description can also be a URL rather than a file, e.g.
+
+.. code-block:: console
+
+   $ prominence run <https://.../filename.json>
+
