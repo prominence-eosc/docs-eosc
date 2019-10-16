@@ -45,7 +45,7 @@ List of all possible job states:
 * **running**: the job is runing.
 * **deleted**: the job has been deleted by the user.
 * **killed**: the job has been forcefully terminated, for example it had been running for too long.
-* **completed**: the job has completed, however note that the exit status may or may not be 0.
+* **completed**: the job has completed, however note that the user application's exit status may or may not be 0.
 * **failed**: the job failed, for example the infrastructure could not be deployed successfully or the container image could not be pulled.
 
 Note that jobs can transition from the deploying or idle states directly to the failed state in the event of problems.
