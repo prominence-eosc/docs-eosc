@@ -21,3 +21,4 @@ Submit globally, run globally.
    jobs
    workflows
    data
+   examples
