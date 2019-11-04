@@ -6,7 +6,7 @@ Introduction
 Features include:
 
 * **Flexible submission**: Submit jobs using a simple batch system style command line interface which can be installed anywhere. Or submit jobs from any Jupyter notebook. Alternatively, interact programmatically using a RESTful API.
-* **Reliability and reproduceability**: All jobs are run in containers to ensure they will reliably run anywhere and are reproducible.
+* **Reliability and reproducibility**: All jobs are run in containers to ensure they will reliably run anywhere and are reproducible.
 * **MPI ready**: Run multi-node Open MPI, Intel MPI or MPICH jobs in addition to single-node HTC jobs.
 * **Workflows**: Construct complex workflows by specifying the dependencies between different jobs.
 * **Multi-cloud native**: Go beyond a single cloud and leverage the resources and features available across many clouds.
