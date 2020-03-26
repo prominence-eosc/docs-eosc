@@ -3,12 +3,13 @@
 Data
 ====
 
-It is possible for jobs to access data in a POSIX-like way, i.e. like a filesystem. Users can specify the mount point to be used inside the container. B2DROP and OneData are supported.
+It is possible for jobs to access data in a POSIX-like way, i.e. like a standard filesystem. Users can specify the mount point to be used inside the container. `B2DROP <https://b2drop.eudat.eu>` and `OneData <https://onedata.org>` (including EGI's `DataHub <https://datahub.egi.eu>`) are supported.
 
 B2DROP
 ------
 
 The following JSON needs to be included in the job description if access to B2DROP is required:
+
 .. code-block:: console
 
    "storage":{
