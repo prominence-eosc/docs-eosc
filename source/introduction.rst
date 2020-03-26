@@ -31,7 +31,7 @@ Tasks execute sequentially within a job, and consist of the following:
 * Container runtime
 * Command to run and optionally any arguments
 * Environment variables
-* Working directory
+* Current working directory
 
 A workflow consists of one or more jobs and optionally any dependencies between them. Jobs within a workflow can be executed sequentially, in parallel or combinations of both.
 
