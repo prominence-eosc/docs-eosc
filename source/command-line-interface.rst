@@ -224,3 +224,39 @@ Once the test job has finished running, ``prominence stdout`` can be used to vie
 
 The next sections of the documentation describe in more detail how to run more complex jobs and workflows.
 
+Jobs and workflows
+------------------
+
+By default all PROMINENCE CLI commands refer to jobs. However, a number of commands include the ability to specify a resource, which is either a ``job`` or a ``workflow``.
+
+Listing workflows:
+
+.. code-block:: console
+
+   prominence list workflows
+
+Describing a workflow:
+
+.. code-block:: console
+
+   prominence describe workflow <id>
+
+Deleting a workflow:
+
+.. code-block:: console
+
+   prominence delete workflow <id>
+
+The standard output and error from a job which is part of a workflow can be viewed by specifying both the workflow id and the name of the job, i.e.
+
+.. code-block:: console
+
+   prominence stdout <id> <job name>
+
+To list all the individual jobs from workflow <id>:
+
+.. code-block:: console
+
+   prominence list jobs <id>
+
+
