@@ -99,23 +99,23 @@ Here’s an example fragment which would need to be included in a workflow descr
 
 .. code-block:: console
 
-"factory": {
-  "type": "zip",
-  "parameters":[
-    {
-      "name": "start_value",
-      "values": [
-        0, 1, 2, 3
-      ]
-    },
-    {
-      "name": "end_value",
-      "values": [
-        8, 9, 10, 11
-      ]
-    }
- ]
-}
+   "factory": {
+     "type": "zip",
+     "parameters":[
+       {
+         "name": "start_value",
+         "values": [
+           0, 1, 2, 3
+         ]
+       },
+       {
+         "name": "end_value",
+         "values": [
+           8, 9, 10, 11
+         ]
+       }
+     ]
+   }
 
 Here we specify the factory to be of type ``zip``. The range of values used to create the jobs is defined in ``parameters``. The name of each parameter is given by ``name`` and a list of values for each parameter is provided. In this example 4 jobs would be created, with:
 
