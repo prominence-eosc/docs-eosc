@@ -64,5 +64,64 @@ When a workflow using job factory is submitted to PROMINENCE individual jobs wil
 Parametric sweep
 ****************
 
+In this case numeric values are generated from start and end points in addition to an increment provided by the user.
+
+Here is an example fragment which would need to be included in a workflow description:
+
+.. code-block:: console
+
+   "factory": {
+     "type": "parametricSweep",
+     "parameters":[
+       {
+         "name": "frame",
+         "start": 1,
+         "end": 4,
+         "step": 1
+       }
+     ]
+   }
+
+Here we specify the factory to be of type ``parametericSweep``. The range of values used to create the jobs is defined in ``parameters``. The name of the parameter is given by ``name``. In this example the parameter frame is varied between the value ``start`` and at most ``end`` in increments of ``step``.
+
+Jobs can obtain the value of the parameter through the use of substitutions or environment variables. If a job’s command was to include ``$frame`` or ``${frame}``, this would be substituted by the appropriate value. An environment variable ``PROMINENCE_PARAMETER_frame`` would also be available to the job containing this value.
+
+Additional parameters can be included in order to carry out multi-dimensional parameter sweeps. 
+
+If you wish to explicitly specify each value to be used, rather than specifying start and end values and a step, use a ``zip`` (described below) rather than a parametric sweep.
+
 Zip
 ***
+
+A set of jobs is created by substituting a range of values into a template job. The values to be used are specified in the form of lists. If multiple parameters are provided, the i-th job is provided with the i-th element from each list. The name comes from Python’s ``zip`` function.
+
+Here’s an example fragment which would need to be included in a workflow description:
+
+.. code-block:: console
+
+"factory": {
+  "type": "zip",
+  "parameters":[
+    {
+      "name": "start_value",
+      "values": [
+        0, 1, 2, 3
+      ]
+    },
+    {
+      "name": "end_value",
+      "values": [
+        8, 9, 10, 11
+      ]
+    }
+ ]
+}
+
+Here we specify the factory to be of type ``zip``. The range of values used to create the jobs is defined in ``parameters``. The name of each parameter is given by ``name`` and a list of values for each parameter is provided. In this example 4 jobs would be created, with:
+
+* start_value = 0, end_value = 8
+* start_value = 1, end_value = 9
+* start_value = 2, end_value = 10
+* start_value = 3, end_value = 11
+
+
