@@ -159,7 +159,7 @@ The list command by default lists any active jobs, i.e. jobs which are idle or r
    3103   idle     alahiff/cherab-jet:latest   python  batch_make_sensitivity_matrix.py 0 59
    3104   idle     ikester/blender:latest      blender -b classroom/classroom.blend -o frame_### -f 
 
-It’s also possible to request a list of jobs using a constraint on the labels associated with each job. For example, if you submitted a group of jobs with a label name=run5, the following would list all such jobs:
+It’s also possible to request a list of jobs using a constraint on the labels associated with each job. For example, if you submitted a group of jobs with a label ``name=run5``, the following would list all such jobs:
 
 .. code-block:: console
 
