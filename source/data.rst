@@ -8,7 +8,7 @@ It is possible for jobs to access data in a POSIX-like way, i.e. like a standard
 B2DROP
 ------
 
-The following JSON needs to be included in the job description if access to B2DROP is required:
+The following JSON needs to be included in every job description where access to B2DROP is required:
 
 .. code-block:: console
 
@@ -34,7 +34,7 @@ OneData
 
 In order to mount your OneData storage in jobs firstly an access token needs to be created using the ``Access tokens`` menu in the OneData web interface.
 
-The following JSON needs to be included in the job description if access to OneData is required:
+The following JSON needs to be included in every job description where access to OneData is required:
 
 .. code-block:: console
 
