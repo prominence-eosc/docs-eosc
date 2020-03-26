@@ -32,7 +32,7 @@ Using the PROMINENCE CLI to create jobs, the ``--storage`` option can be used to
 OneData
 -------
 
-In order to mount your OneData storage in jobs firstly an access token needs to be created using the ``Access tokens`` menu in the OneData web interface.
+In order to mount your OneData storage in jobs firstly an access token needs to be created using the **Access tokens** menu in the OneData web interface.
 
 The following JSON needs to be included in every job description where access to OneData is required:
 
