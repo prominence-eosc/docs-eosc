@@ -3,3 +3,55 @@
 Data
 ====
 
+It is possible for jobs to access data in a POSIX-like way, i.e. like a filesystem. Users can specify the mount point to be used inside the container. B2DROP and OneData are supported.
+
+B2DROP
+------
+
+The following JSON needs to be included in the job description if access to B2DROP is required:
+.. code-block:: console
+
+   "storage":{
+     "type":"b2drop",
+     "mountpoint":"/data",
+     "b2drop":{
+       "app-username":"***",
+       "app-password":"***"
+     }
+   }
+
+where the app username and password should be set as appropriate. The mountpoint ``/data`` here is just an example and can be replaced with something else.
+
+Using the PROMINENCE CLI to create jobs, the ``--storage`` option can be used to specify the name of a JSON file containing the above content. For example:
+
+.. code-block:: console
+
+   prominence create --storage my-onedata.json ...
+
+OneData
+-------
+
+In order to mount your OneData storage in jobs firstly an access token needs to be created using the ``Access tokens`` menu in the OneData web interface.
+
+The following JSON needs to be included in the job description if access to OneData is required:
+
+.. code-block:: console
+
+   "storage":{
+     "type":"onedata",
+     "mountpoint":"/data",
+     "onedata":{
+       "provider":"***",
+       "token":"***"
+     }
+   }
+
+where the provider hostname and access token should be set as appropriate. The mountpoint ``/data`` here is just an example and can be replaced with something else.
+
+Using the PROMINENCE CLI to create jobs, the ``--storage`` option can be used to specify the name of a JSON file containing the above content. For example:
+
+.. code-block:: console
+
+   prominence create --storage my-onedata.json ...
+
+
