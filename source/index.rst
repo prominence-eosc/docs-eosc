@@ -6,7 +6,7 @@
 PROMINENCE
 ==========
 
-PROMINENCE is a platform which allows users to exploit idle cloud resources for running containerized workloads.
+PROMINENCE is a platform which allows users to exploit idle cloud resources for running containerised workloads. From a user's perspective PROMINENCE appears like a standard batch system.
 
 Submit globally, run globally.
 
