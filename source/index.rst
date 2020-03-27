@@ -8,6 +8,11 @@ PROMINENCE
 
 PROMINENCE is a platform which allows users to exploit idle cloud resources for running containerised workloads. From a user's perspective PROMINENCE appears like a standard batch system.
 
+Computing resources are provided by the EGI FedCloud sites which support token-based authentication. Currently these are:
+
+* IN2P3-IRES
+* INFN-CATANIA-STACK
+
 .. toctree::
    :numbered:
    :maxdepth: 2
