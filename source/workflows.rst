@@ -3,10 +3,13 @@
 Workflows
 =========
 
-Groups of jobs
---------------
+Types of workflows
+------------------
 
-In some situations it can be useful to be able to manage a group of jobs as a single entity (a workflow). In order to submit a group of indendepent jobs as a workflow the first step is to write a JSON description of the workflow. This is just a list of the definitions of the individual jobs, which can be created easily using ``prominence create --dry-run``. The basic structure is:
+Groups of jobs
+^^^^^^^^^^^^^^
+
+In some situations it can be useful to be able to manage a group of jobs as a single entity. In order to submit a group of indendepent jobs as a workflow the first step is to write a JSON description of the workflow. This is just a list of the definitions of the individual jobs, which can be created easily using ``prominence create --dry-run``. The basic structure is:
 
 .. code-block:: console
   
@@ -19,7 +22,7 @@ In some situations it can be useful to be able to manage a group of jobs as a si
    }
 
 Directed acyclic graphs 
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to submit a workflow the first step is to write a JSON description of the workflow. This is just a list of the definitions of the individual jobs, each of which can be created easily using ``prominence create --dry-run``, along with the dependencies between them. Each dependency defines a parent and its children. The basic structure is:
 
@@ -41,16 +44,8 @@ Each of the individual jobs must have defined names as these are used in order t
 
 It is important to note that the resources requirements for the individual jobs can be (and should be!) specified. This will mean that each step in a workflow will only use the resources it requires. Jobs within a single workflow can of course request very different resources, which makes it possible for workflows to have both HTC and HPC steps.
 
-By default the number of retries is zero, which means that if a job fails the workflow will fail. Any jobs which depend on a failed job will not be attempted. If the number of retries is set to one or more, if an individual job fails (i.e. exit code is not 0) it will be retried up to the specified number of times. To set a maximum number of retries, include ``maximumRetries`` in the workflow definition, e.g.
-
-.. code-block:: console
-
-   "policies": {
-     "maximumRetries": 2
-   }
-
 Job factories
--------------
+^^^^^^^^^^^^^
 
 The following types of job factories are available:
 
@@ -124,4 +119,24 @@ Here we specify the factory to be of type ``zip``. The range of values used to c
 * start_value = 2, end_value = 10
 * start_value = 3, end_value = 11
 
+Failures and retries
+--------------------
+
+By default the number of retries is zero, which means that if a job fails the workflow will fail. Any jobs which depend on a failed job will not be attempted. If the number of retries is set to one or more, if an individual job fails (i.e. exit code is not 0) it will be retried up to the specified number of times. To set a maximum number of retries, include ``maximumRetries`` in the workflow definition, e.g.
+
+.. code-block:: console
+
+   "policies": {
+     "maximumRetries": 2
+   }
+
+If any jobs in a workflow fail, the workflow will stop running once there are no more jobs which can be run. Any dependencies of jobs which fail will not be executed.
+
+The ``rerun`` command can be used to re-run any failed jobs in a workflow, for example:
+
+.. code-block:: console
+
+   prominence rerun <workflow id>
+
+This will retry jobs which had previously failed and execute any dependencies which were not run previously due to the failed jobs. This command can be used multiple times if necessary.
 
