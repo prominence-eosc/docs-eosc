@@ -44,8 +44,9 @@ Job lifecycle
 
 List of all possible job states:
 
-* **idle**: the job is not yet running
+* **idle**: the job is not yet running.
 * **deploying**: the infrastructure to run the job is being deployed.
+* **waiting**: the job is waiting for appropriate resources to become available.
 * **running**: the job is runing.
 * **deleted**: the job has been deleted by the user.
 * **killed**: the job has been forcefully terminated, for example it had been running for too long.
