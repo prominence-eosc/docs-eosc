@@ -141,6 +141,16 @@ The main help page gives a list of all the available commands:
      -h, --help            show this help message and exit
      --version             show the version number and exit
 
+Prerequisites
+-------------
+
+In order to use the EGI PROMINENCE service you must be a member of one of the following VOs and have the **vm_operator** role:
+
+* vo.access.egi.eu
+* fusion
+
+Support for additional VOs can be added upon request.
+
 Registration
 ------------
 
