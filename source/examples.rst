@@ -242,7 +242,7 @@ Instantiate the PROMINENCE Client class, and obtain a token:
    client = ProminenceClient()
    client.authenticate_user()
 
-As usual, you will be asked to visit a web page in your browser to authenticate. Note that the token retrieved is stored in memory and is not written to disk. If the token expires you will need to re-run ``client.authenticate_user()``.
+As usual, you will be asked to visit a web page in your browser to authenticate. Note that the token retrieved is stored in memory and is not written to disk. If the token expires you will need to re-run ``authenticate_user()``.
 
 Construct the JSON job description. In this example we use OSPRay to render an image:
 
