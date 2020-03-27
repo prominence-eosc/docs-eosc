@@ -285,3 +285,24 @@ Now submit the job:
    id = client.create_job(job)
    print('Job submitted with id', id)
 
+Jobs can be listed and the status of jobs checked. Here are some examples:
+
+.. code-block:: console
+
+   # Check status of a particular job
+   job = client.describe_job(387)
+   print('Job status is', job['status'])
+
+   # List currently active jobs
+   print(client.list_jobs())
+
+   # List last completed job
+   print(client.list_jobs(completed=True))
+
+   # List the last 4 completed jobs
+   print(client.list_jobs(completed=True, num=4))
+
+   # List all jobs with label app=hello
+   print(client.list_jobs(all=True, constraint='app=hello'))
+
+
