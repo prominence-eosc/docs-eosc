@@ -8,8 +8,6 @@ PROMINENCE
 
 PROMINENCE is a platform which allows users to exploit idle cloud resources for running containerised workloads. From a user's perspective PROMINENCE appears like a standard batch system.
 
-Submit globally, run globally.
-
 .. toctree::
    :numbered:
    :maxdepth: 2
@@ -22,3 +20,5 @@ Submit globally, run globally.
    workflows
    data
    examples
+
+PROMINENCE was originally developed in the Fusion Science Demonstrator in EOSCpilot. The European Open Science Cloud for Research pilot project was funded by the European Commission, DG Research & Innovation under contract no. 739563. This work is also co-funded by the EOSC-hub project (Horizon 2020) under Grant number 777536.
