@@ -20,7 +20,7 @@ Here we run one of the `LAMMPS <https://lammps.sandia.gov/>`_ benchmark problems
                      shub://intel/HPC-containers-from-Intel:lammps \
                      mpirun -np \$PROMINENCE_CPUS "/lammps/lmp_intel_cpu_intelmpi -in in.lj.txt"
 
-This illustrates using `--artifact`` to download a file before executing the job. Rather than using a hardwired number of CPUs (e.g. 2 in this case) the environment variable `PROMINENCE_CPUS` is used instead. Resource requests (e.g. CPU and memory) refer to a minimum required, and as such it is possible that users may be given resources with more than what is requested. In this example, using the environment variable `PROMINENCE_CPUS` to specify how many MPI processes to run ensures that all CPUs are used.
+This illustrates using ``--artifact`` to download a file before executing the job. Rather than using a hardwired number of CPUs (e.g. 2 in this case) the environment variable ``PROMINENCE_CPUS`` is used instead. Resource requests (e.g. CPU and memory) refer to a minimum required, and as such it is possible that users may be given resources with more than what is requested. In this example, using ``PROMINENCE_CPUS`` to specify how many MPI processes to run ensures that all CPUs are used.
 
 Workflows
 ---------
