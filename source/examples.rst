@@ -223,7 +223,7 @@ A basic JSON description is shown below:
 Jupyter notebooks
 -----------------
 
-Since all interaction with PROMINENCE is via a REST API it is straightforward to use PROMINENCE from **any** Jupyter notebook.
+Since all interaction with PROMINENCE is via a REST API it is straightforward to use PROMINENCE from **any** Jupyter notebook. This can be done directly using the REST API, but here we make use of the PROMINENCE CLI.
 
 Firstly install the PROMINENCE CLI:
 
