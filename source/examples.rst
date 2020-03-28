@@ -28,6 +28,8 @@ Workflows
 1D parameter sweep
 ^^^^^^^^^^^^^^^^^^
 
+Here we run a one-dimensional parameter sweep. Jobs are created where the variable ``frame`` is varied from 1 through to 4.
+
 .. code-block:: console
 
    {
