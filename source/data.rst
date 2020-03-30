@@ -21,13 +21,15 @@ The following JSON needs to be included in every job description where access to
      }
    }
 
-where the app username and password should be set as appropriate. Note that an application username and password are required, which are not the same as the username and password you use to access B2DROP. To create an application username and password, after logging in to https://b2drop.eudat.eu/ select **Settings** then **Security**. The mountpoint ``/data`` here is just an example and can be replaced with something else.
+where the app username and password should be set as appropriate. The mountpoint ``/data`` here is just an example and can be replaced with something else.
+
+Note that the app username and password are not the same as the username and password used to access B2DROP. To create an app username and password, login to https://b2drop.eudat.eu/, then select **Settings** then **Security** and click **Create new app password**.
 
 Using the PROMINENCE CLI to create jobs, the ``--storage`` option can be used to specify the name of a JSON file containing the above content. For example:
 
 .. code-block:: console
 
-   prominence create --storage my-onedata.json ...
+   prominence create --storage my-b2drop.json ...
 
 OneData
 -------
@@ -49,12 +51,6 @@ The following JSON needs to be included in every job description where access to
 
 where the provider hostname and access token should be set as appropriate. The mountpoint ``/data`` here is just an example and can be replaced with something else.
 
-Using the PROMINENCE CLI to create jobs, the ``--storage`` option can be used to specify the name of a JSON file containing the above content. For example:
-
-.. code-block:: console
-
-   prominence create --storage my-onedata.json ...
-
 WebDAV
 ------
 
@@ -72,3 +68,4 @@ The following JSON needs to be included in every job description where access to
      }
    }
 
+In this case a URL is required in addition to a username and password.
