@@ -3,7 +3,7 @@
 Data
 ====
 
-It is possible for jobs to access data from external storage systems in a POSIX-like way, like a standard filesystem. Users can specify the mount point to be used inside the container. `B2DROP <https://b2drop.eudat.eu>`_ and `OneData <https://onedata.org>`_ (including EGI's `DataHub <https://datahub.egi.eu>`_) are supported.
+It is possible for jobs to access data from external storage systems in a POSIX-like way, like a standard filesystem. Users can specify the mount point to be used inside the container. `B2DROP <https://b2drop.eudat.eu>`_, `OneData <https://onedata.org>`_ (including EGI's `DataHub <https://datahub.egi.eu>`_) and WebDAV are supported.
 
 B2DROP
 ------
@@ -55,4 +55,20 @@ Using the PROMINENCE CLI to create jobs, the ``--storage`` option can be used to
 
    prominence create --storage my-onedata.json ...
 
+WebDAV
+------
+
+The following JSON needs to be included in every job description where access to a storage system providing WebDAV is required:
+
+.. code-block:: console
+
+   "storage":{
+     "type":"webdav",
+     "mountpoint":"/data",
+     "webdav":{
+       "url":"***",
+       "username":"***",
+       "password":"***"
+     }
+   }
 
