@@ -129,8 +129,8 @@ The main help page gives a list of all the available commands:
    positional arguments:
      {run,create,list,describe,delete,stdout,stderr}
                            sub-command help
-       create              Create a job or workflow from a JSON file
-       run                 Run a job
+       create              Create a job
+       run                 Create a job or workflow from JSON in a file or URL
        list                List jobs or workflows
        describe            Describe a job or workflow
        delete              Delete a job or workflow
