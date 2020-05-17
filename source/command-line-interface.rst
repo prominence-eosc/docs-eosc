@@ -181,30 +181,30 @@ The FedCloud Check-in client also provides the exact command to run to generate 
 Your first job
 --------------
 
-Run the following command in order to submit a simple test job by typing ``prominence create alahiff/testpi``, i.e.
+Run the following command in order to submit a simple test job by typing ``prominence create eoscprominence/testpi``, i.e.
 
 .. code-block:: console
 
-   $ prominence create alahiff/testpi
+   $ prominence create eoscprominence/testpi
    Job created with id 7375
 
-Here ``alahiff/testpi`` is the name of the container image on Docker Hub. This command will submit a job which runs a container from the ``alahiff/testpi`` image using the default entrypoint specified in the image. In this case it is a simple Python script which calculates pi in three different ways.
+Here ``eoscprominence/testpi`` is the name of the container image on Docker Hub. This command will submit a job which runs a container from the ``eoscprominence/testpi`` image using the default entrypoint specified in the image. In this case it is a simple Python script which calculates pi in three different ways.
 
 To check the status of the job, run ``prominence list`` to list all currently active jobs:
 
 .. code-block:: console
 
    $ prominence list
-   ID     NAME   CREATED               STATUS      ELAPSED      IMAGE            CMD
-   7375          2019-10-14 12:33:11   deploying                alahiff/testpi
+   ID     NAME   CREATED               STATUS      ELAPSED      IMAGE                   CMD
+   7375          2019-10-14 12:33:11   deploying                eoscprominence/testpi 
 
 Eventually the status will change to ``runnning``, ``completed`` and then disappear. The ``list`` command can be given the argument ``--completed`` to show completed jobs. For example, to see the most recently completed job:
 
 .. code-block:: console
 
     $ prominence list --completed
-    ID     NAME   CREATED               STATUS      ELAPSED      IMAGE            CMD
-    7375          2019-10-14 12:33:11   completed   0+00:00:15   alahiff/testpi
+    ID     NAME   CREATED               STATUS      ELAPSED      IMAGE                   CMD
+    7375          2019-10-14 12:33:11   completed   0+00:00:15   eoscprominence/testpi
 
 Once the test job has finished running, ``prominence stdout`` can be used to view the standard output, e.g.
 
