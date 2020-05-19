@@ -43,10 +43,10 @@ To run an MPI job, you need to specify either ``--openmpi`` for Open MPI, ``--in
 
 The number of processes to run per node is assumed to be the same as the number of cores available per node. If the number of cores available per node is more than the requested number of cores all cores will be used. This behaviour can be changed by using ``--procs-per-node`` to define the number of processes per node to use.
 
-.. warning::
-   Currently ``--procs-per-node`` is not supported for MPICH jobs.
+.. note::
+   It is always preferable to run MPI jobs within a single node if possible, especially for low numbers of CPU cores.
 
-Unlike single-node jobs, a command to run (and optionally any arguments) must be specified. If an entrypoint is defined in the container image it will be ignored.
+For MPI jobs a command to run (and optionally any arguments) must be specified. If an entrypoint is defined in the container image it will be ignored.
 
 Hybrid MPI-OpenMP jobs
 ^^^^^^^^^^^^^^^^^^^^^^
