@@ -13,14 +13,16 @@ Here we run one of the `LAMMPS <https://lammps.sandia.gov/>`_ benchmark problems
 
 .. code-block:: console
 
-   prominence create --cpus 2 \
-                     --memory 2 \
-                     --artifact https://lammps.sandia.gov/inputs/in.lj.txt \
-                     --runtime singularity \
-                     shub://intel/HPC-containers-from-Intel:lammps \
-                     mpirun -np \$PROMINENCE_CPUS "/lammps/lmp_intel_cpu_intelmpi -in in.lj.txt"
+prominence create --cpus 4 \
+                  --memory 4 \
+                  --nodes 1 \
+                  --intelmpi \
+                  --artifact https://lammps.sandia.gov/inputs/in.lj.txt \
+                  --runtime singularity \
+                  shub://intel/HPC-containers-from-Intel:lammps \
+                  "/lammps/lmp_intel_cpu_intelmpi -in in.lj.txt"
 
-This illustrates using ``--artifact`` to download a file from a URL before executing the job. Rather than using a hardwired number of CPUs (e.g. 2 in this case) the environment variable ``PROMINENCE_CPUS`` is used instead. Resource requests (e.g. CPU and memory) refer to a minimum required, and as such it is possible that users may be given resources with more than what is requested. In this example, using ``PROMINENCE_CPUS`` to specify how many MPI processes to run ensures that all CPUs are used.
+This also illustrates using ``--artifact`` to download a file from a URL before executing the job.
 
 Workflows
 ---------
