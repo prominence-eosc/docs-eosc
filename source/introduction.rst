@@ -15,7 +15,7 @@ Features include:
 Workflows, jobs and tasks
 -------------------------
 
-A job in PROMINENCE consists of the following:
+A **job** in PROMINENCE consists of the following:
 
 * Name
 * Labels
@@ -25,7 +25,7 @@ A job in PROMINENCE consists of the following:
 * One or more task definitions
 * Policies (e.g. how many times should failing tasks should be retried)
 
-Tasks execute sequentially within a job, and consist of the following:
+**Tasks** execute sequentially within a job, and consist of the following:
 
 * Container image
 * Container runtime
@@ -33,7 +33,7 @@ Tasks execute sequentially within a job, and consist of the following:
 * Environment variables
 * Current working directory
 
-A workflow consists of one or more jobs and optionally any dependencies between them. Jobs within a workflow can be executed sequentially, in parallel or combinations of both.
+A **workflow** consists of one or more jobs and optionally any dependencies between them. Jobs within a workflow can be executed sequentially, in parallel or combinations of both.
 
 An example workflow, including how it is made up of jobs and tasks, is shown below:
 
@@ -46,8 +46,7 @@ List of possible job states:
 
 * **pending**: the job is not yet running.
 * **running**: the job is runing.
+* **completed**: the job has completed, however note that the user application's exit status may or may not be 0.
 * **deleted**: the job has been deleted by the user.
 * **killed**: the job has been forcefully terminated, for example it had been running for too long.
-* **completed**: the job has completed, however note that the user application's exit status may or may not be 0.
 * **failed**: the job failed, for example the container image could not be pulled.
-
