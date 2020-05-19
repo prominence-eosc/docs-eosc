@@ -149,15 +149,15 @@ Checking job status
 Listing jobs
 ^^^^^^^^^^^^
 
-The list command by default lists any active jobs, i.e. jobs which are idle or running:
+The list command by default lists any active jobs, i.e. jobs which are pending or running:
 
 .. code-block:: console
 
    $ prominence list
-   ID     STATUS   IMAGE                       CMD     ARGS
-   3101   idle     alahiff/testpi
-   3103   idle     alahiff/cherab-jet:latest   python  batch_make_sensitivity_matrix.py 0 59
-   3104   idle     ikester/blender:latest      blender -b classroom/classroom.blend -o frame_### -f 
+   ID     STATUS    IMAGE                       CMD     ARGS
+   3101   pending   alahiff/testpi
+   3103   pending   alahiff/cherab-jet:latest   python  batch_make_sensitivity_matrix.py 0 59
+   3104   pending   ikester/blender:latest      blender -b classroom/classroom.blend -o frame_### -f 
 
 It’s also possible to request a list of jobs using a constraint on the labels associated with each job. For example, if you submitted a group of jobs with a label ``name=run5``, the following would list all such jobs:
 
@@ -165,7 +165,7 @@ It’s also possible to request a list of jobs using a constraint on the labels 
 
    $ prominence list --all --constraint name=run5
 
-Here the ``--all`` option means that both active (i.e. idle or running) and completed jobs will be listed.
+Here the ``--all`` option means that both active (i.e. pending or running) and completed jobs will be listed.
 
 Describing a job
 ^^^^^^^^^^^^^^^^
@@ -177,7 +177,7 @@ To get more information about an individual job, use the describe command, for e
    $ prominence describe 345
    {
      "id": , 
-     "status": "idle", 
+     "status": "pending", 
      "resources": {
        "nodes": 1, 
        "disk": 10, 
