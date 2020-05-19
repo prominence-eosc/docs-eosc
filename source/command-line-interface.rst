@@ -195,8 +195,8 @@ To check the status of the job, run ``prominence list`` to list all currently ac
 .. code-block:: console
 
    $ prominence list
-   ID     NAME   CREATED               STATUS      ELAPSED      IMAGE                   CMD
-   7375          2019-10-14 12:33:11   deploying                eoscprominence/testpi 
+   ID     NAME   CREATED               STATUS    ELAPSED      IMAGE                   CMD
+   7375          2019-10-14 12:33:11   pending                eoscprominence/testpi 
 
 Eventually the status will change to ``runnning``, ``completed`` and then disappear. The ``list`` command can be given the argument ``--completed`` to show completed jobs. For example, to see the most recently completed job:
 
