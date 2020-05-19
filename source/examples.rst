@@ -13,14 +13,14 @@ Here we run one of the `LAMMPS <https://lammps.sandia.gov/>`_ benchmark problems
 
 .. code-block:: console
 
-prominence create --cpus 4 \
-                  --memory 4 \
-                  --nodes 1 \
-                  --intelmpi \
-                  --artifact https://lammps.sandia.gov/inputs/in.lj.txt \
-                  --runtime singularity \
-                  shub://intel/HPC-containers-from-Intel:lammps \
-                  "/lammps/lmp_intel_cpu_intelmpi -in in.lj.txt"
+   prominence create --cpus 4 \
+                     --memory 4 \
+                     --nodes 1 \
+                     --intelmpi \
+                     --artifact https://lammps.sandia.gov/inputs/in.lj.txt \
+                     --runtime singularity \
+                     shub://intel/HPC-containers-from-Intel:lammps \
+                     "/lammps/lmp_intel_cpu_intelmpi -in in.lj.txt"
 
 This also illustrates using ``--artifact`` to download a file from a URL before executing the job.
 
