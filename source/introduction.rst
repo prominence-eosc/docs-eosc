@@ -30,7 +30,7 @@ Features include:
 
 **Invisible infrastructure**
 
-* All infrastructure provisioning is handled completely automatically and is totally transparent to the user.
+* All infrastructure provisioning is handled completely automatically and is totally transparent to the user
 
 Workflows, jobs and tasks
 -------------------------
