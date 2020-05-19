@@ -22,7 +22,7 @@ Here we run one of the `LAMMPS <https://lammps.sandia.gov/>`_ benchmark problems
                      shub://intel/HPC-containers-from-Intel:lammps \
                      "/lammps/lmp_intel_cpu_intelmpi -in in.lj.txt"
 
-This also illustrates using ``--artifact`` to download a file from a URL before executing the job.
+This also illustrates using ``--artifact`` to download a file from a URL before executing the job. Note that it is not necessary to use `mpirun` to run the application as this is taken care of automatically. 
 
 Workflows
 ---------
