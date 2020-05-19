@@ -42,17 +42,12 @@ An example workflow, including how it is made up of jobs and tasks, is shown bel
 Job lifecycle
 -------------
 
-List of all possible job states:
+List of possible job states:
 
-* **idle**: the job is not yet running.
-* **deploying**: the infrastructure to run the job is being deployed.
-* **waiting**: the job is waiting for appropriate resources to become available.
+* **pending**: the job is not yet running.
 * **running**: the job is runing.
 * **deleted**: the job has been deleted by the user.
 * **killed**: the job has been forcefully terminated, for example it had been running for too long.
 * **completed**: the job has completed, however note that the user application's exit status may or may not be 0.
-* **failed**: the job failed, for example the infrastructure could not be deployed successfully or the container image could not be pulled.
-
-Note that jobs can transition from the deploying or idle states directly to the failed state in the event of problems.
-
+* **failed**: the job failed, for example the container image could not be pulled.
 
