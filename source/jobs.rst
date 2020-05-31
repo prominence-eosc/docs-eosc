@@ -346,10 +346,10 @@ Policies
 
 The ``policies`` section of a job’s JSON description enables users to have more control of how jobs are managed and influence where they will be executed. The available options are:
 
-* **maximumRetries**: maximum number of times a failing job will be retried
-* **maximumTimeInQueue**: maximum time in minutes the job will remain in the queue
-* **leaveInQueue**: when set to ``true`` (default is ``false``) completed, failed and deleted jobs will remain in the queue until the user specifies that they can be removed
-* **placement**: allows users to specify requirements and preferences to influence where jobs will run
+* **maximumRetries**: maximum number of times a failing job will be retried.
+* **maximumTimeInQueue**: maximum time in minutes the job will stay in the ``pending`` state. The default is ``0``, which means that the job will stay in the ``pending`` state until it starts running or there is a failure. The value ``-1`` means that the job will stay in the ``pending`` state until it starts running. When set to a non-zero value, the job will be automatically set to the ``failed`` state if it has not started running within the time limit.
+* **leaveInQueue**: when set to ``true`` (default is ``false``) completed, failed and deleted jobs will remain in the queue until the user specifies that they can be removed.
+* **placement**: allows users to specify requirements and preferences to influence where jobs will run....
 
 For example:
 
