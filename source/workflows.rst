@@ -11,7 +11,7 @@ Groups of jobs
 
 In some situations it can be useful to be able to manage a group of jobs as a single entity. In order to submit a group of indendepent jobs as a workflow the first step is to write a JSON description of the workflow. This is just a list of the definitions of the individual jobs, which can be created easily using ``prominence create --dry-run``. The basic structure is:
 
-.. code-block:: console
+.. code-block:: json
   
    {
        "name": "test-workflow-1",
@@ -26,7 +26,7 @@ Directed acyclic graphs
 
 In order to submit a workflow the first step is to write a JSON description of the workflow. This is just a list of the definitions of the individual jobs, each of which can be created easily using ``prominence create --dry-run``, along with the dependencies between them. Each dependency defines a parent and its children. The basic structure is:
 
-.. code-block:: console
+.. code-block:: json
 
    {
      "name": "test-workflow-1",
@@ -63,7 +63,7 @@ In this case numeric values are generated from start and end points in addition 
 
 Here is an example fragment which would need to be included in a workflow description:
 
-.. code-block:: console
+.. code-block:: json
 
    "factory": {
      "type": "parametricSweep",
@@ -92,7 +92,7 @@ A set of jobs is created by substituting a range of values into a template job. 
 
 Here’s an example fragment which would need to be included in a workflow description:
 
-.. code-block:: console
+.. code-block:: json
 
    "factory": {
      "type": "zip",
@@ -124,7 +124,7 @@ Failures and retries
 
 By default the number of retries is zero, which means that if a job fails the workflow will fail. Any jobs which depend on a failed job will not be attempted. If the number of retries is set to one or more, if an individual job fails (i.e. exit code is not 0) it will be retried up to the specified number of times. To set a maximum number of retries, include ``maximumRetries`` in the workflow definition, e.g.
 
-.. code-block:: console
+.. code-block:: json
 
    "policies": {
      "maximumRetries": 2
