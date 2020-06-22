@@ -3,13 +3,19 @@
 Using the API
 =============
 
+PROMINENCE uses a RESTful API using data formatted in JSON. A HTTP POST request is used to submit jobs while HTTP GET requests are used to check the status of jobs or retrieve information about jobs. An access token must be provided with each request in the **Authorization** header:
+
+.. code-block:: console
+
+   Authorization: Bearer <token>
+
 Python
 ------
 
 With the requests module
 ************************
 
-The standard `requests module <https://requests.readthedocs.io/en/master/>`_ can be used to interact with the PROMINENCE service. A HTTP POST request is used to submit jobs while HTTP GET requests are used to check the status of jobs or retrieve information about jobs.
+The standard `requests module <https://requests.readthedocs.io/en/master/>`_ can be used to interact with the PROMINENCE service.
 
 Below is a complete simple example which submits a basic job. A JSON description of the job is constructed and a HTTP POST request is used to submit the job to the PROMINENCE service. In order to authenticate with the PROMINENCE server the access token is read from a file (the same file used by the PROMINENCE CLI) and the appropriate header is constructed and included in the HTTP request.
 
