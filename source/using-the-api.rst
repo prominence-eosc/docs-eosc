@@ -18,7 +18,7 @@ The **curl** command line tool can be used to submit jobs and check their status
 
    export ACCESS_TOKEN=<token>
 
-Here ``<token>`` should be replaced with the actual access token obtained from either https://aai.egi.eu/fedcloud directly or from the refresh token obtained from this page.
+Here ``<token>`` should be replaced with the actual access token obtained from either https://aai.egi.eu/fedcloud directly or from the refresh token obtained from that page.
 
 Create a file containing the JSON description of a job. In this example we use a file ``testpi.json`` containing the following:
 
