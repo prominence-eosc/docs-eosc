@@ -14,6 +14,7 @@ The standard `requests module <https://requests.readthedocs.io/en/master/>`_ can
 Below is a complete simple example which submits a basic job. A JSON description of the job is constructed and a HTTP POST request is used to submit the job to the PROMINENCE service. In order to authenticate with the PROMINENCE server the access token is read from a file (the same file used by the PROMINENCE CLI) and the appropriate header is constructed and included in the HTTP request.
 
 .. code-block:: console
+
    import json
    import os
    import requests
