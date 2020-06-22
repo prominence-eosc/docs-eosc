@@ -59,6 +59,7 @@ Below is a complete simple example which submits a basic job. A JSON description
    # Submit the job
    response = requests.post('https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs', json=job, headers=headers)
 
+   # Check if the submission was successful and get the job id
    if response.status_code == 201:
        if 'id' in response.json():
            print('Job submitted with id %d' % response.json()['id'])
