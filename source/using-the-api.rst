@@ -62,7 +62,7 @@ If the submission was successful, this should return something like the followin
 
    {"id":1099}
 
-We see heere that the job id is **1099**. We can check the status of this job:
+We see heere that the job id is **1099**. We can check the status of this job with a simple GET request:
 
 .. code-block:: console
 
