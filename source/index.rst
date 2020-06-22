@@ -21,6 +21,7 @@ Computing resources are provided by `EGI Federated Cloud <https://www.egi.eu/fed
    jobs
    workflows
    data
+   using-the-api
    examples
 
 PROMINENCE was originally developed in the Fusion Science Demonstrator in EOSCpilot. The European Open Science Cloud for Research pilot project was funded by the European Commission, DG Research & Innovation under contract no. 739563. This work is also co-funded by the EOSC-hub project (Horizon 2020) under Grant number 777536.
