@@ -18,7 +18,7 @@ The **curl** command line tool can be used to submit jobs and check their status
 
    export ACCESS_TOKEN=<token>
 
-Create a file containing the JSON description of a job. In this example we use a file `testpi.json` containing the following:
+Create a file containing the JSON description of a job. In this example we use a file ``testpi.json`` containing the following:
 
 .. code-block:: json
 
