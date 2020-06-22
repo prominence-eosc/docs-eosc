@@ -9,6 +9,72 @@ PROMINENCE uses a RESTful API using data formatted in JSON. A HTTP POST request 
 
    Authorization: Bearer <token>
 
+cURL
+----
+
+The **curl** command line tool can be used to submit jobs and check their status. Firstly, define an environment variable containing a valid token, e.g.
+
+.. code-block:: console
+
+   export ACCESS_TOKEN=<token>
+
+Create a file containing the JSON description of a job. In this example we use a file `testpi.json` containing the following:
+
+.. code-block:: json
+
+   {
+     "resources": {
+       "memory": 1,
+       "cpus": 1,
+       "nodes": 1,
+       "disk": 10
+     },
+     "name": "calculate-pi",
+     "tasks": [
+       {
+         "image": "eoscprominence/testpi",
+         "runtime": "singularity"
+       }
+     ]
+   }
+
+This job can be submitted by running the following command:
+
+.. code-block:: console
+
+   curl -i -X POST -H "Authorization: Bearer $ACCESS_TOKEN" \
+        -H "Content-Type: application/json" \
+        -d@testpi.json \
+        https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs
+
+If the submission was successful, this should return something like the following:
+
+.. code-block:: console
+
+   HTTP/1.1 201 CREATED
+   Server: nginx/1.10.3 (Ubuntu)
+   Date: Mon, 22 Jun 2020 11:43:46 GMT
+   Content-Type: application/json
+   Content-Length: 12
+   Connection: keep-alive
+
+   {"id":1099}
+
+We see heere that the job id is **1099**. We can check the status of this job:
+
+.. code-block:: console
+
+   $ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1099
+   HTTP/1.1 200 OK
+   Server: nginx/1.10.3 (Ubuntu)
+   Date: Mon, 22 Jun 2020 11:44:45 GMT
+   Content-Type: application/json
+   Content-Length: 212
+   Connection: keep-alive
+
+   [{"events":{"createTime":1592826226},"id":1099,"name":"calculate-pi","resources":{"cpus":1,"disk":10,"memory":1,"nodes":1},"status":"pending","tasks":[{"image":"eoscprominence/testpi","runtime":"singularity"}]}]
+
+
 Python
 ------
 
