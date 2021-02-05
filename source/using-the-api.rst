@@ -55,27 +55,62 @@ If the submission was successful, this should return something like the followin
 
    HTTP/1.1 201 CREATED
    Server: nginx/1.10.3 (Ubuntu)
-   Date: Mon, 22 Jun 2020 11:43:46 GMT
+   Date: Fri, 05 Feb 2021 17:39:59 GMT
    Content-Type: application/json
    Content-Length: 12
    Connection: keep-alive
 
-   {"id":1099}
+   {"id":1699}
 
-We see heere that the job id is **1099**. We can check the status of this job with a simple GET request:
+We see here that the job id is **1699**. We can check the status of this job with a simple GET request, here using **jq** to display the JSON in a pretty way:
 
 .. code-block:: console
 
-   $ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1099
-   HTTP/1.1 200 OK
-   Server: nginx/1.10.3 (Ubuntu)
-   Date: Mon, 22 Jun 2020 11:44:45 GMT
-   Content-Type: application/json
-   Content-Length: 212
-   Connection: keep-alive
+   $ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1169 | jq .
+   [
+     {
+       "events": {
+         "createTime": 1612546799
+       },
+       "id": 1169,
+       "name": "calculate-pi",
+       "resources": {
+         "cpus": 1,
+         "disk": 10,
+         "memory": 1,
+         "nodes": 1
+       },
+       "status": "pending",
+       "tasks": [
+         {
+           "image": "eoscprominence/testpi",
+           "runtime": "singularity"
+         }
+       ]
+     }
+   ]
 
-   [{"events":{"createTime":1592826226},"id":1099,"name":"calculate-pi","resources":{"cpus":1,"disk":10,"memory":1,"nodes":1},"status":"pending","tasks":[{"image":"eoscprominence/testpi","runtime":"singularity"}]}]
+Alternatively we can list all currently active jobs, i.e. jobs which have not yet completed:
 
+.. code-block:: console
+
+   $ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs | jq .
+   [
+     {
+       "events": {
+         "createTime": 1612546799
+       },
+       "id": 1169,
+       "name": "calculate-pi",
+       "status": "pending",
+       "tasks": [
+         {
+           "image": "eoscprominence/testpi",
+           "runtime": "singularity"
+         }
+       ]
+     }
+   ]
 
 Python
 ------
