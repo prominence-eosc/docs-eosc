@@ -112,6 +112,20 @@ Alternatively we can list all currently active jobs, i.e. jobs which have not ye
      }
    ]
 
+Jobs can easily be deleted using the REST API, for example:
+
+.. code-block:: console
+
+   $ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -X DELETE https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1169
+   HTTP/1.1 200 OK
+   Server: nginx/1.10.3 (Ubuntu)
+   Date: Fri, 05 Feb 2021 18:01:28 GMT
+   Content-Type: application/json
+   Content-Length: 3
+   Connection: keep-alive
+
+   {}
+
 Python
 ------
 
