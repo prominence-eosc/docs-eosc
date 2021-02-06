@@ -70,3 +70,32 @@ and for MPICH:
    ENV LD_LIBRARY_PATH /usr/lib64/mpich/lib:${LD_LIBRARY_PATH}
 
 To create a container using IntelMPI an Intel compiler licence is required to build the application. This application can then be copied into a container image with the Intel Parallel Studio Runtime installed. For example, see `here <https://software.intel.com/en-us/articles/installing-intel-parallel-studio-xe-runtime-2019-using-yum-repository>`_ for information on installing the free Intel runtime in a CentOS environment.
+
+Registry authentication
+-----------------------
+If a registry requires authentication then ``imagePullCredential`` must be specified in the task, which defines a ``username`` and ``token``. For example:
+
+.. code-block:: console
+
+   {
+     "resources": {
+       "memory": 1,
+       "cpus": 1,
+       "nodes": 1,
+       "disk": 10
+     },
+     "name": "gitlab-image",
+     "tasks": [
+       {
+         "image": "registry.gitlab.com/mynamespace/myproject/image:rc1",
+         "runtime": "singularity",
+         "imagePullCredential": {
+           "username": "username",
+           "token": "VzIxo3sZ2yC6V5YeSBxR"
+         }
+       }
+     ]
+   }
+
+The same method can be used for other private registries and Docker Hub. It is preferable that a token with read-only privileges is used rather than a password if at all possible.
+
