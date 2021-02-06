@@ -38,7 +38,7 @@ Using the PROMINENCE CLI to create jobs, the ``--storage`` option can be used to
 OneData
 -------
 
-Storage accessible through OneData, including `EGI DataHub <https://datahub.egi.eu>`, can be made available to jobs. It should be noted that
+Storage accessible through OneData, including `EGI DataHub <https://datahub.egi.eu>`_, can be made available to jobs. It should be noted that
 it is relatively straightforward to setup a OneData provider in order to integrate an existing storage system.
 
 In order to mount your OneData storage in jobs firstly an access token needs to be created using the **Access tokens** menu in the OneData web interface.
