@@ -6,7 +6,7 @@
 PROMINENCE
 ==========
 
-PROMINENCE is a platform which allows users to exploit idle cloud resources for running containerised workloads. From a user's perspective PROMINENCE appears like a standard batch system.
+PROMINENCE is a platform which allows users to exploit idle cloud resources for running containerised workloads. From a user's perspective PROMINENCE appears like a standard batch system but jobs can be run on clouds anywhere in the world.
 
 Computing resources are provided by `EGI Federated Cloud <https://www.egi.eu/federation/egi-federated-cloud/>`_ sites.
 
