@@ -12,8 +12,10 @@ The image can be specified in the following ways:
 * ``shub://<user>/<repo>:<tag>`` (Singularity Hub)
 * URL of a tarball created by ``docker save``
 * URL of a Singularity image
+* path of a tarball created by ``docker save`` when remote storage is attached to jobs
+* path of a Singularity image when remote storage is attached to jobs
 
-Container registries other than Docker Hub may also work provided authentication is not required.
+Container registries other than Docker Hub may also work. It is possible to provide credentials to use for authenticating with a registry.
 
 Under some conditions a container runtime will be selected automatically. This will only happen if there is only one runtime which will work for the specified image. For other cases, e.g. a Docker Hub image, Singularity is used as the default but optionally udocker can be forced by the user.
 
