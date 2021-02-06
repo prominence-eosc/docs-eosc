@@ -349,7 +349,7 @@ The ``policies`` section of a job’s JSON description enables users to have mor
 * **maximumRetries**: maximum number of times a failing job will be retried.
 * **maximumTimeInQueue**: maximum time in minutes the job will stay in the ``pending`` state. The default is ``0``, which means that the job will stay in the ``pending`` state until it starts running or there is a failure. The value ``-1`` means that the job will stay in the ``pending`` state until it starts running. When set to a non-zero value, the job will be automatically set to the ``failed`` state if it has not started running within the time limit.
 * **leaveInQueue**: when set to ``true`` (default is ``false``) completed, failed and deleted jobs will remain in the queue until the user specifies that they can be removed.
-* **placement**: allows users to specify requirements and preferences to influence where jobs will run....
+* **placement**: allows users to specify requirements and preferences to influence where jobs will run.
 
 For example:
 
@@ -380,7 +380,8 @@ For example:
 Placement policies
 ^^^^^^^^^^^^^^^^^^
 
-Job placement policies enable users to influence where jobs will be executed. This consists of ``requirements`` and ``preferences``.
+Job placement policies enable users to influence where jobs will be executed. ``Sites`` refer to specific clouds and ``regions`` refer to groups of clouds.
+Placement policies consist of ``requirements`` (which must be satisfied) and ``preferences`` (used for ranking).
 
 To force a job to run at a particular site (``OpenStack-Alpha`` in this case):
 
@@ -415,7 +416,7 @@ Environment variables
 
 Some environment variables are set automatically and are available for jobs to use.
 
-* **PROMINENCE_CPUS**: the number of CPUs available (which could be larger than what was requested)
-* **PROMINENCE_MEMORY**: the amount of memory in GB available (which could be larger than what was requested)
+* **PROMINENCE_CPUS**: the number of CPUs available, which could be larger than what was requested
+* **PROMINENCE_MEMORY**: the amount of memory in GB available, which could be larger than what was requested
 * **PROMINENCE_CONTAINER_RUNTIME**: the container runtime in use, either ``singularity`` or ``udocker``
 
