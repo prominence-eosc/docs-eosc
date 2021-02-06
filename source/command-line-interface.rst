@@ -53,7 +53,8 @@ If ``virtualenv`` is not available it can be installed in a user’s home direct
 Using Singularity
 ^^^^^^^^^^^^^^^^^
 
-An alternative is to use Singularity, if available, and create an alias for the command ``prominence``. Firstly pull the Docker image:
+An alternative is to use Singularity, if available, and create an alias for the command ``prominence``. This enables the PROMINENCE CLI to be used without having to worry about virtual environments or depending on any software on the host.
+Firstly pull the Docker image:
 
 .. code-block:: console
 
