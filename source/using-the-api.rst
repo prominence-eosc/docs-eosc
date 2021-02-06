@@ -3,22 +3,31 @@
 Using the API
 =============
 
-PROMINENCE uses a RESTful API using data formatted in JSON. A HTTP POST request is used to submit jobs while HTTP GET requests are used to check the status of jobs or retrieve information about jobs. An access token must be provided with each request in the **Authorization** header:
+PROMINENCE uses a RESTful API using data formatted in JSON. A HTTP POST request is used to submit jobs while HTTP GET requests are used to check the status of jobs or retrieve information about jobs. A HTTP DELETE request is used to delete jobs.
+
+An access token must be provided with each request in the **Authorization** header:
 
 .. code-block:: console
 
    Authorization: Bearer <token>
 
+where ``<token>`` should be replaced with the actual access token obtained from either https://aai.egi.eu/fedcloud directly or from the refresh token obtained from that page.
+
+The URLs to use are as follows:
+
+* For jobs: https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs
+* For workflows: https://prominence.fedcloud-tf.fedcloud.eu/api/v1/workflows
+
 cURL
 ----
 
-The **curl** command line tool can be used to submit jobs and check their status. Firstly, define an environment variable containing a valid token, e.g.
+The **curl** command line tool can be used to submit jobs and check their status. Firstly, for simplicity we define an environment variable containing a valid token, e.g.
 
 .. code-block:: console
 
    export ACCESS_TOKEN=<token>
 
-Here ``<token>`` should be replaced with the actual access token obtained from either https://aai.egi.eu/fedcloud directly or from the refresh token obtained from that page.
+where ``<token>`` should be replaced with the access token as mentioned previously.
 
 Create a file containing the JSON description of a job. In this example we use a file ``testpi.json`` containing the following:
 
