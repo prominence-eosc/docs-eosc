@@ -246,7 +246,7 @@ Listing workflows:
 
    prominence list workflows
 
-Describing a workflow:
+Describing a specific workflow:
 
 .. code-block:: console
 
