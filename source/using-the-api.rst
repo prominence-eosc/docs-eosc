@@ -89,7 +89,7 @@ We can check the status of this job with a simple GET request, here using ``jq``
 
 will return:
 
-.. code-block:: console
+.. code-block:: json
 
    [
      {
@@ -122,7 +122,7 @@ This request returns all information about the specified job. A completed job wi
 
 will return:
 
-.. code-block:: console
+.. code-block:: json
 
    [
      {   
@@ -175,7 +175,7 @@ Alternatively we can list all currently active jobs, i.e. jobs which have not ye
 
 will return:
 
-.. code-block:: console
+.. code-block:: json
 
    [
      {
@@ -205,7 +205,7 @@ In order to list completed jobs (e.g. finished successfully, deleted, failed, or
 
 will return:
 
-.. code-block:: console
+.. code-block:: json
 
    [
      {
