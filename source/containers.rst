@@ -36,6 +36,8 @@ Images which will result in udocker being selected:
 
 * URL for a Docker tarball (filename ends in ``.tar``)
 
+Generally it is recommended to use Singularity. If it is essential to be able to write into the container's filesystem (e.g ``/opt`` or ``/var``) then udocker should be used.
+
 Tips for creating containers
 ----------------------------
 Some important tips for creating containers to be used with PROMINENCE:
