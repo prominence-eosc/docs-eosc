@@ -3,7 +3,7 @@
 Using the API
 =============
 
-PROMINENCE uses a RESTful API using data formatted in JSON. A HTTP POST request is used to submit jobs while HTTP GET requests are used to check the status of jobs or retrieve information about jobs. A HTTP DELETE request is used to delete jobs.
+PROMINENCE uses a RESTful API with data formatted in JSON. A HTTP POST request is used to submit jobs while HTTP GET requests are used to check the status of jobs or retrieve information about jobs. A HTTP DELETE request is used to delete jobs.
 
 An access token must be provided with each request in the **Authorization** header:
 
@@ -18,6 +18,8 @@ The URLs to use are as follows:
 * For jobs: https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs
 * For workflows: https://prominence.fedcloud-tf.fedcloud.eu/api/v1/workflows
 
+To begin with we will go through some basic examples using cURL in order to demonstrate common API requests and their responses, and then look at using the API with Python.
+
 cURL
 ----
 
@@ -28,6 +30,9 @@ The **curl** command line tool can be used to submit jobs and check their status
    export ACCESS_TOKEN=<token>
 
 where ``<token>`` should be replaced with the access token as mentioned previously.
+
+Submitting a job
+^^^^^^^^^^^^^^^^
 
 Create a file containing the JSON description of a job. In this example we use a file ``testpi.json`` containing the following:
 
@@ -71,7 +76,12 @@ If the submission was successful, this should return something like the followin
 
    {"id":1699}
 
-We see here that the job id is **1699**. We can check the status of this job with a simple GET request, here using **jq** to display the JSON in a pretty way:
+We see here that the job id is **1699**.
+
+Checking the satus of a job
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We can check the status of this job with a simple GET request, here using **jq** to display the JSON in a pretty way:
 
 .. code-block:: console
 
@@ -99,6 +109,11 @@ We see here that the job id is **1699**. We can check the status of this job wit
      }
    ]
 
+This request returns all information about the specified job.
+
+Listing all jobs
+^^^^^^^^^^^^^^^^
+
 Alternatively we can list all currently active jobs, i.e. jobs which have not yet completed:
 
 .. code-block:: console
@@ -120,6 +135,38 @@ Alternatively we can list all currently active jobs, i.e. jobs which have not ye
        ]
      }
    ]
+
+Listing completed jobs
+^^^^^^^^^^^^^^^^^^^^^^
+
+In order to list completed jobs (e.g. finished successfully, deleted, failed, or killed) add the query parameter **completed** with value **true**, for example:
+
+.. code-block:: console
+
+   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs?completed=true" | jq .
+   [
+     {
+       "events": {
+         "createTime": 1612682844,
+         "endTime": 1612683091
+       },
+       "id": 1179,
+       "name": "calculate-pi",
+       "status": "failed",
+       "statusReason": "No matching resources currently available",
+       "tasks": [
+         {
+           "image": "eoscprominence/testpi",
+           "runtime": "singularity"
+         }
+       ]
+     }
+   ]
+
+By default the last completed job will be shown. An additional query parameter **num** can be added specifying the number of jobs to display.
+
+Deleting jobs
+^^^^^^^^^^^^^
 
 Jobs can easily be deleted using the REST API, for example:
 
