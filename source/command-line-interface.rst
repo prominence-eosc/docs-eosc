@@ -38,6 +38,7 @@ The PROMINENCE CLI can be installed in a new virtual environment, e.g.
 
 .. code-block:: console
 
+   $ mkdir ~/.virtualenvs
    $ virtualenv ~/.virtualenvs/prominence
    $ source ~/.virtualenvs/prominence/bin/activate
    $ pip install prominence-cli
