@@ -109,7 +109,50 @@ We can check the status of this job with a simple GET request, here using **jq**
      }
    ]
 
-This request returns all information about the specified job.
+This request returns all information about the specified job. A completed job will have more information in the JSON response, for example:
+
+.. code-block:: console
+
+   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1181" | jq .
+   [
+     {   
+       "events": {
+         "createTime": 1612684304,
+         "endTime": 1612684626,
+         "startTime": 1612684595
+       },
+       "execution": {
+         "maxMemoryUsageKB": 242814,
+         "site": "OpenStack-UNIV-LILLE",
+         "tasks": [
+           {
+             "cpuTimeUsage": 0.5480000000000012,
+             "exitCode": 0,
+             "imagePullStatus": "completed",
+             "imagePullTime": 26.14915418624878,
+             "maxResidentSetSizeKB": 63044,
+             "retries": 0,
+             "wallTimeUsage": 0.6737308502197266
+           }
+         ]
+       },
+       "id": 1181,
+       "name": "calculate-pi",
+       "resources": {
+         "cpus": 1,
+         "disk": 10,
+         "memory": 1,
+         "nodes": 1
+       },
+       "status": "completed",
+       "tasks": [
+         {
+           "image": "eoscprominence/testpi",
+           "runtime": "singularity"
+         }
+       ]
+     }
+   ]
 
 Listing all jobs
 ^^^^^^^^^^^^^^^^
@@ -164,6 +207,19 @@ In order to list completed jobs (e.g. finished successfully, deleted, failed, or
    ]
 
 By default the last completed job will be shown. An additional query parameter **num** can be added specifying the number of jobs to display.
+
+Getting the standard output or error from jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following example returns the standard output from a job, in this case with id **1181**:
+
+.. code-block:: console
+
+   $ curl -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1181/stdout
+
+To get the standard error replace **stdout** above with **stderr**.
+
+Note that the standard output and error can be obtained both once a job has completed and while it is running, so it is possible to watch what a job is doing in real time, no matter where in the world it is running.
 
 Deleting jobs
 ^^^^^^^^^^^^^
