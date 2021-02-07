@@ -5,7 +5,7 @@ Using the API
 
 PROMINENCE uses a RESTful API with data formatted in JSON. A HTTP POST request is used to submit jobs while HTTP GET requests are used to check the status of jobs or retrieve information about jobs. A HTTP DELETE request is used to delete jobs.
 
-An access token must be provided with each request in the **Authorization** header:
+An access token must be provided with each request in the ``Authorization`` header:
 
 .. code-block:: console
 
@@ -23,7 +23,7 @@ To begin with we will go through some basic examples using cURL in order to demo
 cURL
 ----
 
-The **curl** command line tool can be used to submit jobs and check their status. Firstly, for simplicity we define an environment variable containing a valid token, e.g.
+The ``curl`` command line tool can be used to submit jobs and check their status. Firstly, for simplicity we define an environment variable containing a valid token, e.g.
 
 .. code-block:: console
 
@@ -76,12 +76,12 @@ If the submission was successful, this should return something like the followin
 
    {"id":1699}
 
-We see here that the job id is **1699**.
+We see here that the job id is ``1699``.
 
 Checking the satus of a job
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We can check the status of this job with a simple GET request, here using **jq** to display the JSON in a pretty way:
+We can check the status of this job with a simple GET request, here using ``jq`` to display the JSON in a pretty way:
 
 .. code-block:: console
 
@@ -182,7 +182,7 @@ Alternatively we can list all currently active jobs, i.e. jobs which have not ye
 Listing completed jobs
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In order to list completed jobs (e.g. finished successfully, deleted, failed, or killed) add the query parameter **completed** with value **true**, for example:
+In order to list completed jobs (e.g. finished successfully, deleted, failed, or killed) add the query parameter ``completed`` with value ``true``, for example:
 
 .. code-block:: console
 
@@ -206,18 +206,18 @@ In order to list completed jobs (e.g. finished successfully, deleted, failed, or
      }
    ]
 
-By default the last completed job will be shown. An additional query parameter **num** can be added specifying the number of jobs to display.
+By default the last completed job will be shown. An additional query parameter ``num`` can be added specifying the number of jobs to display.
 
 Getting the standard output or error from jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following example returns the standard output from a job, in this case with id **1181**:
+The following example returns the standard output from a job, in this case with id ``1181``:
 
 .. code-block:: console
 
    $ curl -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1181/stdout
 
-To get the standard error replace **stdout** above with **stderr**.
+To get the standard error replace ``stdout`` above with ``stderr``.
 
 Note that the standard output and error can be obtained both once a job has completed and while it is running, so it is possible to watch what a job is doing in real time, no matter where in the world it is running.
 
