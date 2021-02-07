@@ -85,7 +85,12 @@ We can check the status of this job with a simple GET request, here using ``jq``
 
 .. code-block:: console
 
-   $ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1169 | jq .
+   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1169 | jq .
+
+will return:
+
+.. code-block:: console
+
    [
      {
        "events": {
@@ -114,6 +119,11 @@ This request returns all information about the specified job. A completed job wi
 .. code-block:: console
 
    curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1181" | jq .
+
+will return:
+
+.. code-block:: console
+
    [
      {   
        "events": {
@@ -161,7 +171,12 @@ Alternatively we can list all currently active jobs, i.e. jobs which have not ye
 
 .. code-block:: console
 
-   $ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs | jq .
+   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs | jq .
+
+will return:
+
+.. code-block:: console
+
    [
      {
        "events": {
@@ -187,6 +202,11 @@ In order to list completed jobs (e.g. finished successfully, deleted, failed, or
 .. code-block:: console
 
    curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs?completed=true" | jq .
+
+will return:
+
+.. code-block:: console
+
    [
      {
        "events": {
@@ -215,7 +235,7 @@ The following example returns the standard output from a job, in this case with 
 
 .. code-block:: console
 
-   $ curl -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1181/stdout
+   curl -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1181/stdout
 
 To get the standard error replace ``stdout`` above with ``stderr``.
 
@@ -228,7 +248,7 @@ Jobs can easily be deleted using the REST API, for example:
 
 .. code-block:: console
 
-   $ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -X DELETE https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1169
+   curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -X DELETE https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1169
    HTTP/1.1 200 OK
    Server: nginx/1.10.3 (Ubuntu)
    Date: Fri, 05 Feb 2021 18:01:28 GMT
