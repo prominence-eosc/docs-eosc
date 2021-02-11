@@ -13,7 +13,7 @@ An access token must be provided with each request in the ``Authorization`` head
 
 where ``<token>`` should be replaced with the actual access token obtained from either https://aai.egi.eu/fedcloud directly or from the refresh token obtained from that page.
 
-The URLs to use are as follows:
+The base URL is https://prominence.fedcloud-tf.fedcloud.eu/api/v1, while the specific endpoints to use are as follows:
 
 * For jobs: https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs
 * For workflows: https://prominence.fedcloud-tf.fedcloud.eu/api/v1/workflows
