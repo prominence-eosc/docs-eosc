@@ -47,7 +47,7 @@ It is important to note that the resources requirements for the individual jobs 
 Job factories
 ^^^^^^^^^^^^^
 
-The following types of job factories are available:
+Job factories allow many similar jobs to be created from a single template. The following types of job factories are available:
 
 * **parametric sweep**: a set of jobs is created by sweeping one or more parameters through a range of values
 * **zip**: a set of jobs is created from multiple lists, where the i-th job contains the i-th element from each list
