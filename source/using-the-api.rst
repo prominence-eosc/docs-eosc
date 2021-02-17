@@ -63,7 +63,7 @@ This job can be submitted by running the following command:
         -d@testpi.json \
         https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs
 
-If the submission was successful, this should return something like the following:
+If the submission was successful, this should return a response like the following:
 
 .. code-block:: console
 
