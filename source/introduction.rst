@@ -40,7 +40,7 @@ A **job** in PROMINENCE consists of the following:
 * Name
 * Labels
 * Input files
-* Output files
+* Storage
 * Required resources (e.g. CPU cores, memory, disk)
 * One or more task definitions (described below)
 * Policies (e.g. how many times should failing tasks should be retried)
