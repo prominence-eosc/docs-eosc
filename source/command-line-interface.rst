@@ -39,7 +39,7 @@ The PROMINENCE CLI can be installed in a new virtual environment, e.g.
 .. code-block:: console
 
    $ mkdir ~/.virtualenvs
-   $ virtualenv ~/.virtualenvs/prominence
+   $ python3 -m venv ~/.virtualenvs/prominence
    $ source ~/.virtualenvs/prominence/bin/activate
    $ pip install prominence-cli
 
@@ -50,52 +50,6 @@ If ``virtualenv`` is not available it can be installed in a user’s home direct
    $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
    $ python3 get-pip.py --user
    $ pip install --user virtualenv
-
-Using Singularity
-^^^^^^^^^^^^^^^^^
-
-An alternative is to use Singularity, if available, and create an alias for the command ``prominence``. This enables the PROMINENCE CLI to be used without having to worry about virtual environments or depending on any software on the host.
-Firstly pull the Docker image:
-
-.. code-block:: console
-
-   $ singularity pull docker://eoscprominence/prominence-cli
-
-This will create a file ``prominence-cli.simg``. An alias can be created by putting the following in your ``~/.bashrc`` file:
-
-.. code-block:: console
-
-   alias prominence="singularity run <path>/prominence-cli.simg.sif"
-
-where the full path to the container image should be specified.
-
-Using udocker
-^^^^^^^^^^^^^
-
-Similarly to Singularity, another alternative is to use udocker. Because udocker can be installed as an unprivileged user, this method can be used to allow the PROMINENCE CLI to be used on a UI or login node which does not have Singularity installed.
-
-Firstly install udocker if necessary:
-
-.. code-block:: console
-
-   $ curl https://raw.githubusercontent.com/indigo-dc/udocker/master/udocker.py > udocker
-   $ chmod u+rx ./udocker
-   $ ./udocker install
-
-and move the file ``udocker`` to somewhere in your ``PATH``. See `here <https://github.com/indigo-dc/udocker/blob/master/doc/installation_manual.md>`_ for more information.
-
-Once udocker is installed, pull the image and create a container:
-
-.. code-block:: console
-
-   $ udocker pull eoscprominence/prominence-cli
-   $ udocker create --name=prominence eoscprominence/prominence-cli:latest
-
-An alias for the prominence command can be created by putting the following in your ``~/.bashrc`` file:
-
-.. code-block:: console
-
-   alias prominence="udocker run --bindhome --hostenv prominence"
 
 Checking what version is installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -132,7 +86,7 @@ The main help page gives a list of all the available commands:
      {run,create,list,describe,delete,stdout,stderr}
                            sub-command help
        create              Create a job
-       run                 Create a job or workflow from JSON in a file or URL
+       run                 Create a job or workflow from JSON or YAML in a file or URL
        list                List jobs or workflows
        describe            Describe a job or workflow
        delete              Delete a job or workflow
