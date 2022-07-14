@@ -107,23 +107,12 @@ In order to use the EGI PROMINENCE service you must be a member of one of the fo
 
 Support for additional VOs can be added upon request.
 
-Registration
-------------
-
-PROMINENCE will automatically deploy and delete infrastructure provision on EGI FedCloud sites. In order to give permission for PROMINENCE to do this, visit `https://prominence.fedcloud-tf.fedcloud.eu/ <https://prominence.fedcloud-tf.fedcloud.eu/>`_ and click **Authorise**. Doing this provides a long-lived refresh token to PROMINENCE which it can use to obtain access tokens which it uses to interact with clouds.
-
-Note that you can at any time go to `https://aai.egi.eu/oidc/manage/user/services <https://aai.egi.eu/oidc/manage/user/services>`_ and revoke access. Please be aware that if you do this PROMINENCE will no longer be able to delete infrastructure associated with your jobs, so if there are any running VMs they will continue running indefinitely and will need to be found and deleted manually.
 
 Getting an access token
 -----------------------
 
-In order to interact with the PROMINENCE service via the CLI an access token is required. Go to the `EGI FedCloud Check-in client <https://aai.egi.eu/fedcloud>`_ and click on **Authorise** to log in with your Check-in credentials to obtain:
+In order to interact with the PROMINENCE service via the CLI an access token is required. Go to the `<https://eosc.prominence.cloud>`_ and click on **Login** to log in with your Check-in credentials to obtain an access token.
 
-* a client id
-* a client secret
-* a refresh token
-
-The refresh token allows you to generate access tokens without having to login every time.
 
 The FedCloud Check-in client also provides the exact command to run to generate an access token. The PROMINENCE CLI requires the output of this command to be stored in the file ``~/.prominence/token``. The command to run will be of the form:
 
