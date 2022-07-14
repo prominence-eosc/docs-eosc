@@ -8,9 +8,6 @@ Installation
 
 The PROMINENCE CLI can be installed from PyPI, or if preferred, it can be run using containers. It is possible for normal users to install the PROMINENCE CLI without having to request any assistance from their system administrators.
 
-Using pip
-^^^^^^^^^
-
 With sudo or root access
 ::::::::::::::::::::::::
 
@@ -20,8 +17,8 @@ The PROMINENCE CLI can be installed on a host by typing the following:
 
    $ sudo pip install prominence-cli
 
-As a normal user without using virtualenv
-:::::::::::::::::::::::::::::::::::::::::
+As a normal user without using a virtual environment
+::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The PROMINENCE CLI can be installed in a user’s home directory by running:
 
@@ -31,8 +28,8 @@ The PROMINENCE CLI can be installed in a user’s home directory by running:
 
 The directory ``.local/bin`` will need to be added to the ``PATH``.
 
-As a normal user using virtualenv
-:::::::::::::::::::::::::::::::::
+As a normal user using a virtual environment
+::::::::::::::::::::::::::::::::::::::::::::
 
 The PROMINENCE CLI can be installed in a new virtual environment, e.g.
 
@@ -43,7 +40,7 @@ The PROMINENCE CLI can be installed in a new virtual environment, e.g.
    $ source ~/.virtualenvs/prominence/bin/activate
    $ pip install prominence-cli
 
-If ``virtualenv`` is not available it can be installed in a user’s home directory by typing the following before running the above:
+If ``pip`` is not available for some reason it can be installed in a user’s home directory by typing the following before running the above:
 
 .. code-block:: console
 
