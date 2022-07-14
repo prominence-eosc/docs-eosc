@@ -11,12 +11,12 @@ An access token must be provided with each request in the ``Authorization`` head
 
    Authorization: Bearer <token>
 
-where ``<token>`` should be replaced with the actual access token obtained from either https://aai.egi.eu/fedcloud directly or from the refresh token obtained from that page.
+where ``<token>`` should be replaced with the actual access token.
 
-The base URL is https://prominence.fedcloud-tf.fedcloud.eu/api/v1, while the specific endpoints to use are as follows:
+The base URL is https://eosc.prominence.cloud/api/v1, while the specific endpoints to use are as follows:
 
-* For jobs: https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs
-* For workflows: https://prominence.fedcloud-tf.fedcloud.eu/api/v1/workflows
+* For jobs: https://eosc.prominence.cloud/api/v1/jobs
+* For workflows: https://eosc.prominence.cloud/api/v1/workflows
 
 To begin with we will go through some basic examples using cURL in order to demonstrate common API requests and their responses, and then look at using the API with Python.
 
@@ -61,7 +61,7 @@ This job can be submitted by running the following command:
    curl -i -X POST -H "Authorization: Bearer $ACCESS_TOKEN" \
         -H "Content-Type: application/json" \
         -d@testpi.json \
-        https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs
+        https://eosc.prominence.cloud/api/v1/jobs
 
 If the submission was successful, this should return a response like the following:
 
@@ -85,7 +85,7 @@ We can check the status of this job with a simple GET request, here using ``jq``
 
 .. code-block:: console
 
-   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1169 | jq .
+   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://eosc.prominence.cloud/api/v1/jobs/1169 | jq .
 
 will return:
 
@@ -118,7 +118,7 @@ This request returns all information about the specified job. A completed job wi
 
 .. code-block:: console
 
-   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1181" | jq .
+   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://eosc.prominence.cloud/api/v1/jobs/1181" | jq .
 
 will return:
 
@@ -171,7 +171,7 @@ Alternatively we can list all currently active jobs, i.e. jobs which have not ye
 
 .. code-block:: console
 
-   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs | jq .
+   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://eosc.prominence.cloud/api/v1/jobs | jq .
 
 will return:
 
@@ -201,7 +201,7 @@ In order to list completed jobs (e.g. finished successfully, deleted, failed, or
 
 .. code-block:: console
 
-   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs?completed=true" | jq .
+   curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://eosc.prominence.cloud/api/v1/jobs?completed=true" | jq .
 
 will return:
 
@@ -235,7 +235,7 @@ The following example returns the standard output from a job, in this case with 
 
 .. code-block:: console
 
-   curl -H "Authorization: Bearer $ACCESS_TOKEN" https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1181/stdout
+   curl -H "Authorization: Bearer $ACCESS_TOKEN" https://eosc.prominence.cloud/api/v1/jobs/1181/stdout
 
 To get the standard error replace ``stdout`` above with ``stderr``.
 
@@ -248,7 +248,7 @@ Jobs can easily be deleted using the REST API, for example:
 
 .. code-block:: console
 
-   curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -X DELETE https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs/1169
+   curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -X DELETE https://eosc.prominence.cloud/api/v1/jobs/1169
    HTTP/1.1 200 OK
    Server: nginx/1.10.3 (Ubuntu)
    Date: Fri, 05 Feb 2021 18:01:28 GMT
@@ -306,7 +306,7 @@ Below is a complete simple example which submits a basic job. A JSON description
    headers = {'Authorization':'Bearer %s' % token}
 
    # Submit the job
-   response = requests.post('https://prominence.fedcloud-tf.fedcloud.eu/api/v1/jobs', json=job, headers=headers)
+   response = requests.post('https://eosc.prominence.cloud/api/v1/jobs', json=job, headers=headers)
 
    # Check if the submission was successful and get the job id
    if response.status_code == 201:
