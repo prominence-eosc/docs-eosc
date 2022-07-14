@@ -3,7 +3,7 @@
 Using the API
 =============
 
-PROMINENCE uses a RESTful API with data formatted in JSON. A HTTP POST request is used to submit jobs while HTTP GET requests are used to check the status of jobs or retrieve information about jobs. A HTTP DELETE request is used to delete jobs.
+PROMINENCE uses a RESTful API with data formatted in JSON. A POST request is used for job/workflow submission while GET requests are used to check the status of or retrieve information about jobs/workflows. A DELETE request is used to delete jobs/workflows.
 
 An access token must be provided with each request in the ``Authorization`` header:
 
